@@ -7,3 +7,5 @@ routes.get('/', (req, res) => {
         mensagem: "teste"
     });
 });
+
+export default routes;
