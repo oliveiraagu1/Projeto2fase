@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Button = styled.TouchableOpacity`
-    margin-top: 100px;
+    margin-top: 50px;
     border-width: 1px;
     border-color: green;
     justify-content: center;
@@ -16,6 +16,7 @@ export const Texto = styled.Text`
     font-size: 13px;
     color: #00a2ee;
     margin: 5px;
+    margin-left: 10px;
 `;
 
 export const Input = styled.TextInput`
@@ -24,13 +25,14 @@ export const Input = styled.TextInput`
     border-color: #87CEFA;
     width: 85%;
     padding: 8px;
-    margin-left: 8px;
+    margin-left: 10px;
 
 `;
 
 export const TextButton = styled.Text`
     font-Weight: bold;
     font-size: 20px;
+    margin-left: px;
 `;
 
 export const LogoImage = styled.Image`

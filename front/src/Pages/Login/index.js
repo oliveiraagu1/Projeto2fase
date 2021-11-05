@@ -1,40 +1,57 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {Text} from 'react-native';
 
 import { Button, Texto, Input, TextButton } from '../../Styles';
 
 import {
-    Container, 
+    Container,
     Title,
     EsqueciSenha,
-}from './style';
+    ImageTop,
+    Teste,
+    ImageBot
+} from './style';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
 
     const logar = () => {
 
         navigation.navigate('Home');
-    }
+    };
 
-    return(
+    return (
 
         <Container>
-            <Title>ENTRAR</Title>
-            <Texto>Email</Texto>
-            <Input 
 
-            />
-            <Texto>Senha</Texto>
-            <Input 
-                secureTextEntry={true}
+            
 
+            <ImageTop
+                source={require('../../Assets/Login/imageTop.png')}
             />
-            <EsqueciSenha>
-                <Text style={{fontWeight:'bold', color:'#4961E1'}}>Esqueci minha senha</Text>
-            </EsqueciSenha>
-            <Button onPress={logar}>
-                <TextButton>ENTRAR</TextButton>
-            </Button>
+
+            <Teste>
+
+                <Title>ENTRAR</Title>
+                <Texto>Email</Texto>
+                <Input
+
+                />
+                <Texto>Senha</Texto>
+                <Input
+                    secureTextEntry={true}
+
+                />
+                <EsqueciSenha>
+                    <Text style={{ fontWeight: 'bold', color: '#2E9AFE' }}>Esqueci minha senha</Text>
+                </EsqueciSenha>
+                <Button onPress={logar}>
+                    <TextButton>ENTRAR</TextButton>
+                </Button>
+
+                <ImageBot
+                    source={require('../../Assets/Login/imageBot.png')}
+                />
+            </Teste>
 
         </Container>
     )
