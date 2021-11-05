@@ -1,38 +1,40 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import React, {useState} from 'react';
 
-import { Button, Texto, Input, TextButton} from '../../Styles';
-
-import{
-    Container,
-    Title,
-    Scroll
-} from './style';
+import * as G from '../../Styles';
+import * as C from './style';
 
 const Cadastro = ({navigation}) => {
 
-    const cadastrar = () => {
+    const [email, setEmail] = useState('');
+    const [usuer, setUser] = useState('');
+    const [password, setPassword] = useState('');
 
-        alert('Usuario cadastro com sucesso');
-        navigation.navigate('Login');
+    const cadastrar = () => {
+        //navigation.navigate('Login');
     }
 
     return(
 
-        <Container>
-            <Scroll>
-            <Title>CADASTRE-SE</Title>
-            <Texto>Email</Texto>
-            <Input/>
-            <Texto>Nome de usuário</Texto>
-            <Input/>
-            <Texto>Senha</Texto>
-            <Input/>
-            <Button onPress={cadastrar}>
-                <TextButton>ENVIAR</TextButton>
-            </Button>
-            </Scroll>
-        </Container>
+        <C.Container>
+            <C.Scroll>
+            <C.Title>CADASTRE-SE</C.Title>
+            <G.Texto>Email</G.Texto>
+            <G.Input
+                onChangeText={text => setEmail(text)}
+            />
+            <G.Texto>Nome de usuário</G.Texto>
+            <G.Input
+                onChangeText={text => setUser(text)}
+            />
+            <G.Texto>Senha</G.Texto>
+            <G.Input
+                onChangeText={text => setPassword(text)}
+            />
+            <G.Button onPress={cadastrar}>
+                <G.TextButton>ENVIAR</G.TextButton>
+            </G.Button>
+            </C.Scroll>
+        </C.Container>
     )
 }
 
