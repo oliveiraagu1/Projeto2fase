@@ -31,6 +31,5 @@ export const ImageTop = styled.Image`
 
 export const ImageBot = styled.Image`
     width: 100%;
-    height: 100%;
-    flex: 1px;
+    height: 40%;
 `;

@@ -15,9 +15,9 @@ const StackRoutes = () => {
 
     return(
 
-        <Stack.Navigator initialRouteName={Login}>
+        <Stack.Navigator>
             
-             <Stack.Screen
+            <Stack.Screen
                 name='Inicio'
                 component={Inicio}
             /> 

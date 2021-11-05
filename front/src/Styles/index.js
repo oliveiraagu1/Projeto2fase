@@ -32,7 +32,6 @@ export const Input = styled.TextInput`
 export const TextButton = styled.Text`
     font-Weight: bold;
     font-size: 20px;
-    margin-left: px;
 `;
 
 export const LogoImage = styled.Image`
