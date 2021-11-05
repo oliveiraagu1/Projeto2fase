@@ -2,7 +2,7 @@ import styled  from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
     flex: 1px;
-    background-color: #ccc;
+    background-color: #FFF;
     justify-content: center;
     align-items: center;
 `;
@@ -31,4 +31,8 @@ export const Button = styled.TouchableOpacity`
    padding: 15px;
    border-radius: 40px;
    margin-bottom: 20px;
+`;
+
+export const Text = styled.Text`
+    font-weight: bold;
 `;

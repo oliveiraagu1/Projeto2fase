@@ -1,18 +1,14 @@
-import React from 'react';
-import {Text} from 'react-native';
+import React, {useState} from 'react';
+import {StatusBar} from 'react-native';
 
-import { Button, Texto, Input, TextButton } from '../../Styles';
+import * as G from '../../styles/styles_adm';
 
-import {
-    Container,
-    Title,
-    EsqueciSenha,
-    ImageTop,
-    Teste,
-    ImageBot
-} from './style';
+import * as C from './style';
 
 const Login = ({ navigation }) => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const logar = () => {
 
@@ -21,39 +17,41 @@ const Login = ({ navigation }) => {
 
     return (
 
-        <Container>
+        <C.Container>
 
-            
+            <StatusBar
+                hidden={false}
+            />
 
-            <ImageTop
+            <C.ImageTop
                 source={require('../../Assets/Login/imageTop.png')}
             />
 
-            <Teste>
+            <C.Login>
 
-                <Title>ENTRAR</Title>
-                <Texto>Email</Texto>
-                <Input
-
+                <C.Title>ENTRAR</C.Title>
+                <G.Texto>Email</G.Texto>
+                <G.Input
+                    onChangeText={text => setEmail(text)}
                 />
-                <Texto>Senha</Texto>
-                <Input
+                <G.Texto>Senha</G.Texto>
+                <G.Input
                     secureTextEntry={true}
-
+                    onChangeText={text => setPassword(text)}
                 />
-                <EsqueciSenha>
-                    <Text style={{ fontWeight: 'bold', color: '#2E9AFE' }}>Esqueci minha senha</Text>
-                </EsqueciSenha>
-                <Button onPress={logar}>
-                    <TextButton>ENTRAR</TextButton>
-                </Button>
+                <C.EsqueciSenha>
+                    <C.Text>Esqueci minha senha</C.Text>
+                </C.EsqueciSenha>
+                <G.Button onPress={logar}>
+                    <G.TextButton>ENTRAR</G.TextButton>
+                </G.Button>
 
-                <ImageBot
+                <C.ImageBot
                     source={require('../../Assets/Login/imageBot.png')}
                 />
-            </Teste>
+            </C.Login>
 
-        </Container>
+        </C.Container>
     )
 }
 

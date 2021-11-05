@@ -5,7 +5,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Inicio from '../Pages/Inicio';
 import Login from '../Pages/Login';
 import Cadastro from '../Pages/Cadastro';
-import Home from '../Pages/Home';
 import TabRoutes from '../Routes/Tab'
 
 
@@ -20,6 +19,9 @@ const StackRoutes = () => {
             <Stack.Screen
                 name='Inicio'
                 component={Inicio}
+                options={{
+                    headerShown: false
+                }}
             /> 
               <Stack.Screen
                 name='Login'
@@ -32,6 +34,12 @@ const StackRoutes = () => {
              <Stack.Screen
                 name='Home'
                 component={TabRoutes}
+                options={{
+                    headerTintColor: '#fff',
+                    headerStyle:{
+                        backgroundColor: 'blue'
+                    }
+                }}
             />
         </Stack.Navigator>
     )

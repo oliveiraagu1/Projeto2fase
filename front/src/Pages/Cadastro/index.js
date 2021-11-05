@@ -6,6 +6,7 @@ import { Button, Texto, Input, TextButton} from '../../Styles';
 import{
     Container,
     Title,
+    Scroll
 } from './style';
 
 const Cadastro = ({navigation}) => {
@@ -19,6 +20,7 @@ const Cadastro = ({navigation}) => {
     return(
 
         <Container>
+            <Scroll>
             <Title>CADASTRE-SE</Title>
             <Texto>Email</Texto>
             <Input/>
@@ -29,6 +31,7 @@ const Cadastro = ({navigation}) => {
             <Button onPress={cadastrar}>
                 <TextButton>ENVIAR</TextButton>
             </Button>
+            </Scroll>
         </Container>
     )
 }

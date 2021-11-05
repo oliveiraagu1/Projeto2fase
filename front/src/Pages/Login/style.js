@@ -19,7 +19,7 @@ export const EsqueciSenha = styled.TouchableOpacity`
     margin-top: 10px;
 `;
 
-export const Teste = styled.View`
+export const Login = styled.View`
     background-color: #FFF;
     flex: 1px;
 `;
@@ -32,4 +32,10 @@ export const ImageTop = styled.Image`
 export const ImageBot = styled.Image`
     width: 100%;
     height: 40%;
+`;
+
+export const Text = styled.Text`
+    font-weight: bold;
+    color: #2E9AFE;
+
 `;

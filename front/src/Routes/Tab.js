@@ -14,17 +14,24 @@ const TabRoutes = () => {
             <Tab.Screen 
                 name="Home" 
                 component={Home}
+                options={{
+                    headerShown: false
+                }}
             />
             <Tab.Screen 
                 name="Perfil" 
                 component={Perfil}
                 options={{
-                    title:"Meu perfil",
+                    headerShown: false
                 }}
+                
             />
             <Tab.Screen 
                 name="Teste" 
                 component={Teste} 
+                options={{
+                    headerShown: false
+                }}
             />
         </Tab.Navigator>
     )
