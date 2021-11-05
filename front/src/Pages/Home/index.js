@@ -37,6 +37,12 @@ const Home = () => {
 
                 <G.InfoView>
                     <G.InfoButton>
+                        <G.InfoText>Praias</G.InfoText>
+                    </G.InfoButton>
+                </G.InfoView>
+
+                <G.InfoView>
+                    <G.InfoButton>
                         <G.InfoText>Pontos Historicos</G.InfoText>
                     </G.InfoButton>
                 </G.InfoView>

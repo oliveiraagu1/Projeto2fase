@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 import * as G from '../../styles/styles_adm';
 import * as C from './style';
+import api from '../../Services/Api/api';
 
 const Cadastro = ({navigation}) => {
 
@@ -9,8 +10,17 @@ const Cadastro = ({navigation}) => {
     const [usuer, setUser] = useState('');
     const [password, setPassword] = useState('');
 
-    const cadastrar = () => {
+    const cadastrar = async () => {
         //navigation.navigate('Login');
+
+        const result = await api.get('cadastro')
+        .then((response) => {
+            console.log(response.data)
+        })
+        .catch((error) => {
+            console.log(error)
+            console.log('estou no erro')
+        })
     }
 
     return(

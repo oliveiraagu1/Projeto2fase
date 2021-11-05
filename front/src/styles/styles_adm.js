@@ -42,9 +42,9 @@ export const LogoImage = styled.Image`
 `;
 
 export const MainViewInfo = styled.View`
-    
+    flex-direction: row;
+
 `;
-//flex-direction: row;
 
 export const InfoView = styled.View`
     background-color: green;

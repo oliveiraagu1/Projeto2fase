@@ -12,7 +12,7 @@ const TabRoutes = () => {
     return(
         <Tab.Navigator>
             <Tab.Screen 
-                name="Home" 
+                name="Home1" 
                 component={Home}
                 options={{
                     headerShown: false
