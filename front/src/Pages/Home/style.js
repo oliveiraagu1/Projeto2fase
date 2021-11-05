@@ -18,15 +18,3 @@ export const Title = styled.Text`
     margin-left: 40px;
     margin-top: 40px;
 `;
-
-export const VerNome = styled.TouchableOpacity`
-    box-shadow: 0 0 1px black;
-    margin-top: 20px;
-    border-radius: 10px;
-    padding: 25px;
-    width: 40%;
-    flex-direction: row;
-    flex: 1px;
-    align-items: center;
-    justify-content: center;
-`;

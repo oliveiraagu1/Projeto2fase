@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import * as G from '../../Styles';
+import * as G from '../../styles/styles_adm';
 import * as C from './style';
 
 const Cadastro = ({navigation}) => {

@@ -40,3 +40,22 @@ export const LogoImage = styled.Image`
     border-radius: 350px;
     margin-left: 110px;
 `;
+
+export const MainViewInfo = styled.View`
+    
+`;
+//flex-direction: row;
+
+export const InfoView = styled.View`
+    background-color: green;
+    margin: 10px;
+`;
+
+export const InfoButton = styled.TouchableOpacity`
+    padding: 30px;
+`;
+
+export const InfoText = styled.Text`
+    color: #fff;
+    font-size: 15px;
+`;

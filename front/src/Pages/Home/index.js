@@ -1,41 +1,49 @@
 import React from 'react';
-import {Text} from 'react-native';
+import { StatusBar, Text, View, TouchableOpacity } from 'react-native';
 
-import { LogoImage, TextButton } from '../../Styles';
-import {
-    Container,
-    TextUser,
-    Title,
-    VerNome
-} from './style';
+import * as G from '../../styles/styles_adm';
+import * as C from './style';
 
 const Home = () => {
 
-    return(
+    return (
 
-        <Container>
-            <TextUser>Olá exemplo!</TextUser>
-            <LogoImage
+        <C.Container>
+            <C.TextUser>Olá exemplo!</C.TextUser>
+            <G.LogoImage
                 source={require('../../Assets/logo.png')}
             />
-            <Title>Selecione uma região</Title>
+            <C.Title>Selecione uma região</C.Title>
             <Text>Ingleses</Text>
-            <VerNome>
-                <Text>Restaurantes</Text>
-            </VerNome>
-            <VerNome>
-                <Text>Boates</Text>
-            </VerNome>
-            <VerNome>
-                <Text>Atrações</Text>
-            </VerNome>
-            <VerNome>
-                <Text>Praias</Text>
-            </VerNome>
-            <VerNome>
-                <Text>Pontos Historicos</Text>
-            </VerNome>
-        </Container>
+
+            <G.MainViewInfo>
+                <G.InfoView>
+                    <G.InfoButton>
+                        <G.InfoText>Restaurantes</G.InfoText>
+                    </G.InfoButton>
+                </G.InfoView>
+
+                <G.InfoView>
+                    <G.InfoButton>
+                        <G.InfoText>Boates</G.InfoText>
+                    </G.InfoButton>
+                </G.InfoView>
+
+                <G.InfoView>
+                    <G.InfoButton>
+                        <G.InfoText>Atrações</G.InfoText>
+                    </G.InfoButton>
+                </G.InfoView>
+
+                <G.InfoView>
+                    <G.InfoButton>
+                        <G.InfoText>Pontos Historicos</G.InfoText>
+                    </G.InfoButton>
+                </G.InfoView>
+
+            </G.MainViewInfo>
+
+        </C.Container>
     )
 }
 
