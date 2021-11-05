@@ -23,6 +23,6 @@ const Cadastro = db.define('cadastro', {
     }
 });
 
-Cadastro.sync({alter: true});
+//Cadastro.sync({alter: true});
 
 export default Cadastro;
