@@ -5,7 +5,7 @@ const routes = express.Router();
 
 
 
-routes.get('/', CadastroController.index)
+routes.get('/cadastro', CadastroController.index)
 
 
 export default routes;
