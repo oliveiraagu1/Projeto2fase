@@ -3,6 +3,7 @@ import CadastroController from './controller/CadastroController';
 
 const routes = express.Router();
 
-routes.get('/cadastro', CadastroController.index);
+routes.post('/cadastro', CadastroController.cadastro);
+
 
 export default routes;
