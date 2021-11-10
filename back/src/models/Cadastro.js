@@ -12,9 +12,6 @@ const Cadastro = db.define('cadastros', {
     email: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: {
-            msg: "E-mail já foi cadastrado!"
-        },
         validate: {
             isEmail: {
                 msg: "Verificar o campo e-mail, pois o mesmo precisa ser do tipo e-mail!"
@@ -22,7 +19,7 @@ const Cadastro = db.define('cadastros', {
             len: {
                 args: [4, 30],
                 msg: "O campo e-mail deve ter entre 4 e 30 caracteres!"
-            }
+            },
         }
     },
     name: {
@@ -50,7 +47,7 @@ const Cadastro = db.define('cadastros', {
                 msg: "O campo password deve ter entre 6 e 30 caracteres!"
             }
         }
-    }
+    },
 });
 
 Cadastro.sync({ alter: true });

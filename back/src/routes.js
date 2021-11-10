@@ -5,5 +5,4 @@ const routes = express.Router();
 
 routes.post('/cadastro', CadastroController.cadastro);
 
-
 export default routes;
