@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {StatusBar} from 'react-native';
+import api from '../../Services/Api/api';
 
 import * as G from '../../styles/styles_adm';
 
@@ -10,9 +11,29 @@ const Login = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const logar = () => {
+   
 
-        navigation.navigate('Home');
+    const logar = async () => {
+
+        if(email == '' || password == ''){
+            alert('Todos os campos precisam ser preenchidos!');
+            return;
+        };
+        
+        try{
+            const result = await api.post('login',{
+                email,
+                password
+            });
+            console.log(result.status);
+            alert('Logado com sucesso!');
+            navigation.navigate('Home');
+        }catch(err){
+            console.log(err);
+            alert('Não foi possível logar!')
+        };
+
+
     };
 
     return (
@@ -33,10 +54,15 @@ const Login = ({ navigation }) => {
                 <G.Texto>Email</G.Texto>
                 <G.Input
                     onChangeText={text => setEmail(text)}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    keyboardType="email-address"
                 />
                 <G.Texto>Senha</G.Texto>
                 <G.Input
                     secureTextEntry={true}
+                    autoCapitalize="none"
+                    autoCorrect={false}
                     onChangeText={text => setPassword(text)}
                 />
                 <C.EsqueciSenha>
