@@ -23,7 +23,7 @@ export default {
                 name,
                 password
             });
-            return res.status(201).json(user);
+
         } catch (err) {
             const errors = err.errors
             let mensagem = {};
@@ -35,5 +35,32 @@ export default {
 
         };
     },
+    
+    async login(req, res){
 
+        try {
+
+            const {email, password} = req.body;
+
+            const login = await Cadastro.findOne({
+                where: {
+                    email,
+                    password
+                }
+            });
+    
+            if(login) return res.status(200).json({
+                erro: false,
+                mensagem: "Login realizado com sucesso!"
+            });
+
+            return res.status(400).json({
+                erro: true,
+                mensagem: "E-mail ou senha não conferem!"
+            });
+
+        }catch(err) {
+           console.log(err);
+        };
+    },
 };
