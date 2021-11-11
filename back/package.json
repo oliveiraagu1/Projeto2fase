@@ -9,7 +9,8 @@
     "mysql2": "^2.3.3-rc.0",
     "nodemon": "^2.0.14",
     "sequelize": "^6.9.0",
-    "sucrase": "^3.20.3"
+    "sucrase": "^3.20.3",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "nodemon src/index.js"

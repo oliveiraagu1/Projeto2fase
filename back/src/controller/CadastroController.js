@@ -1,10 +1,26 @@
 import Cadastro from '../models/Cadastro';
+import * as Yup from 'yup';
 
 export default {
 
     async cadastro(req, res) {
 
+        const schema = Yup.object().shape({
+            email: Yup.string("Erro: Necessário preencher o campo e-mail!")
+            .required("Erro: Necessário preencher o campo e-mail!")
+            .email("Erro: Necessário preencher o campo com e-mail válido!"),
+            name: Yup.string("Erro: Necessário preencher o campo name!")
+            .required("Erro: Necessário preencher o campo name!")
+            .min(3, "Erro: Name deve ter no mínimo 3 caracteres!"),
+            password: Yup.string("Erro: Necessário preencher o campo password!")
+            .required("Erro: Necessário preencher o campo password!")
+            .min(6, "Erro: Password deve ter no mínimo 6 caracteres!")
+        });
+
         try {
+
+            await schema.validate(req.body);
+            
             const { email, name, password } = req.body
 
             const usuario = await Cadastro.findAll({
@@ -24,13 +40,12 @@ export default {
                 password
             });
 
+            return res.status(201).json(user);
+
         } catch (err) {
-            const errors = err.errors
-            let mensagem = {};
-            errors.map(item => mensagem = item.message)
             return res.status(400).json({
                 erro: true,
-                mensagem
+                mensagem: err.errors
             });
 
         };
