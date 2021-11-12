@@ -35,9 +35,13 @@ const StackRoutes = () => {
                 name='Home'
                 component={TabRoutes}
                 options={{
+<<<<<<< HEAD
                     
                     headerShown: false,
                    
+=======
+                    headerShown: false,
+>>>>>>> 33a3f8513a36b2da9b43f32547ad9cdfe6e1231d
                 }}
             />
         </Stack.Navigator>
