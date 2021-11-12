@@ -35,7 +35,8 @@ const Login = ({ navigation }) => {
     };
 
     const Logar = async () => {
-        ValidaLogin();
+
+        if(!(await ValidaLogin())) return;
         
         try{
             const result = await api.post('login', {
@@ -47,7 +48,6 @@ const Login = ({ navigation }) => {
             return navigation.navigate('Home');
 
         }catch(err){
-            console.log(err.message);
             return setStatus({
                 type: 'error',
                 message: "Erro: E-mail ou senha incorretos!"
