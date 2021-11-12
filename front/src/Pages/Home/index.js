@@ -9,6 +9,9 @@ const Home = () => {
     return (
 
         <C.Container>
+            <StatusBar
+                backgroundColor="blue"
+            />
             <C.TextUser>Olá exemplo!</C.TextUser>
             <G.LogoImage
                 source={require('../../Assets/logo.png')}

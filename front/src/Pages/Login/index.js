@@ -11,14 +11,10 @@ const Login = ({ navigation }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-   
+    
 
     const logar = async () => {
 
-        if(email == '' || password == ''){
-            alert('Todos os campos precisam ser preenchidos!');
-            return;
-        };
         
         try{
             const result = await api.post('login',{

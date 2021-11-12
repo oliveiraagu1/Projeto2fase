@@ -35,10 +35,7 @@ const StackRoutes = () => {
                 name='Home'
                 component={TabRoutes}
                 options={{
-                    headerTintColor: '#fff',
-                    headerStyle:{
-                        backgroundColor: 'blue'
-                    }
+                    headerShown: false,
                 }}
             />
         </Stack.Navigator>

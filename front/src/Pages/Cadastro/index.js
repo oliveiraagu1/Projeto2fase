@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
 import * as G from '../../styles/styles_adm';
 import * as C from './style';
 import api from '../../Services/Api/api';
+import * as Yup from 'yup';
 
 const Cadastro = ({ navigation }) => {
 
@@ -10,45 +10,56 @@ const Cadastro = ({ navigation }) => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
 
+    const [status, setStatus] = useState({
+        type: '',
+        message: ''
+    })
+
     const ValidaCadastro = async () => {
+        const schema = Yup.object().shape({
+            email: Yup.string()
+                .required("Erro: Campo email é obrigatório!")
+                .email("Erro: Por favor informar um e-mail válido!"),
+            name: Yup.string()
+                .required("Erro: Campo nome é obrigatório!")
+                .min(3, "Erro: Campo nome precisa ter pelo menos 3 caracteres!"),
+            password: Yup.string()
+                .required("Erro: Campo senha é obrigatório!")
+                .min(6, "Erro: Campo senha precisa ter pelo menos 6 caracteres!")
+        });
 
-        if(email == '' || name == '' || password == ''){
-            alert('Todos os campos precisam ser preenchidos!');
-            return;
-        };
-        
-        
+        try {
+            return await schema.validate({ email, name, password });
 
-        if(name.length < 3 || name.length > 50){
-            alert('O nome deve ter entre 3 e 50 caracteres');
-            return;
-        };
+        } catch (err) {
 
-        if(password.length < 6 || password.length > 30){
-            alert('O nome deve ter entre 3 e 50 caracteres');
-            return;
-        };
+            return setStatus({
+                type: 'error',
+                message: err.message
+            });
+        }
     }
 
     const Cadastrar = async () => {
 
         ValidaCadastro();
-        try{
+
+        try {
 
             const result = await api.post('cadastro', {
                 email,
                 name,
                 password
             });
-            console.log(result.status);
-            alert('Usuário cadastrado com sucesso!');
-            navigation.navigate('Login');
+            return setStatus({
+                type: 'success',
+                message: 'Usuário cadastrado com sucesso!'
+            });
+        } catch (err) {
 
-
-        }catch(err){
-            console.log(err.message);
-            alert('Não foi possivel criar o usuário!')
+            return console.log(err.message);
         }
+
     };
 
     return (
@@ -74,6 +85,13 @@ const Cadastro = ({ navigation }) => {
                     autoCapitalize="none"
                     autoCorrect={false}
                 />
+
+                <C.Status>
+                    <C.StatusTextSuccess>{status.type === 'success' ? status.message : ""}</C.StatusTextSuccess>
+                    <C.StatusTextDanger>{status.type === 'error' ? status.message : ""}</C.StatusTextDanger>
+                </C.Status>
+             
+
                 <G.Button onPress={Cadastrar}>
                     <G.TextButton>ENVIAR</G.TextButton>
                 </G.Button>
