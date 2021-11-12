@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native'
+import { withTheme } from 'styled-components/native';
 
 import * as C from './style';
 
@@ -14,12 +15,12 @@ const Inicio = ({ navigation }) => {
                 source={require('../../Assets/logo.png')}
             />
             <C.Titulo>PLACES TO GO</C.Titulo>
-            <C.Button onPress={() => navigation.navigate('Login')}>
-                <C.Text>ENTRAR</C.Text>
-            </C.Button>
-            <C.Button onPress={() => navigation.navigate('Cadastro')}>
-                <C.Text>CADASTRAR-SE</C.Text>
-            </C.Button>
+            <C.ButtonEntrar onPress={() => navigation.navigate('Login')}>
+                <C.TextEntrar>ENTRAR</C.TextEntrar>
+            </C.ButtonEntrar>
+            <C.ButtonCadastrar onPress={() => navigation.navigate('Cadastro')}>
+                <C.TextCadastrar>CADASTRAR-SE</C.TextCadastrar>
+            </C.ButtonCadastrar>
         </C.Container>
     )
 }
