@@ -1,35 +1,58 @@
 import React, {useState} from 'react';
 import {StatusBar} from 'react-native';
 import api from '../../Services/Api/api';
-
 import * as G from '../../styles/styles_adm';
-
 import * as C from './style';
+import * as Yup from 'yup';
 
 const Login = ({ navigation }) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [status, setStatus] = useState({
+        type: '',
+        message: ''
+    });
 
-    
+    const ValidaLogin = async() => {
 
-    const logar = async () => {
+        const schema = Yup.object().shape({
+            email: Yup.string()
+                .required("Erro: O campo e-mail é obrigatório!")
+                .email("Erro: Por favor informar um e-mail válido!"),
+            password: Yup.string()
+                .required("Erro: O campo senha é obrigatório!")
 
+        });
+        try{
+            return await schema.validate({email, password});
+        }catch(err){
+            return setStatus({
+                type: 'error',
+                message: err.message
+            });
+        }
+    };
+
+    const Logar = async () => {
+        ValidaLogin();
         
         try{
-            const result = await api.post('login',{
+            const result = await api.post('login', {
                 email,
                 password
             });
-            console.log(result.status);
-            alert('Logado com sucesso!');
-            navigation.navigate('Home');
+
+            alert(result.data.mensagem);
+            return navigation.navigate('Home');
+
         }catch(err){
-            console.log(err);
-            alert('Não foi possível logar!')
-        };
-
-
+            console.log(err.message);
+            return setStatus({
+                type: 'error',
+                message: "Erro: E-mail ou senha incorretos!"
+            });
+        }
     };
 
     return (
@@ -61,10 +84,13 @@ const Login = ({ navigation }) => {
                     autoCorrect={false}
                     onChangeText={text => setPassword(text)}
                 />
+                <C.Status>
+                    <C.StatusTextDanger>{status.type === 'error' ? status.message : ""}</C.StatusTextDanger>
+                </C.Status>
                 <C.EsqueciSenha>
                     <C.Text>Esqueci minha senha</C.Text>
                 </C.EsqueciSenha>
-                <G.Button onPress={logar}>
+                <G.Button onPress={Logar}>
                     <G.TextButton>ENTRAR</G.TextButton>
                 </G.Button>
 
