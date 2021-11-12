@@ -8,8 +8,8 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Image = styled.Image`
-    width: 55%;
-    height: 28%;
+    width: 273px;
+    height: 294px;
     border-radius: 350px;
     margin-bottom: 15px;
   
@@ -22,10 +22,24 @@ export const Titulo = styled.Text`
     margin-bottom: 80px;
 `;
 
-export const Button = styled.TouchableOpacity`
+export const ButtonEntrar = styled.TouchableOpacity`
    border-width: 1px;
-   border-color: #000080;
-   width: 200px;
+   background-color: #0d47a1;
+   width: 273px;
+   height: 62px;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+   border-radius: 40px;
+   margin-bottom: 20px;
+   border-color: #0d47a1;
+`;
+
+export const ButtonCadastrar = styled.TouchableOpacity`
+   border-width: 1px;
+   border-color: #0d47a1;
+   width: 273px;
+   height: 62px;
    justify-content: center;
    align-items: center;
    padding: 15px;
@@ -33,6 +47,12 @@ export const Button = styled.TouchableOpacity`
    margin-bottom: 20px;
 `;
 
-export const Text = styled.Text`
+export const TextEntrar = styled.Text`
     font-weight: bold;
+    color: #fff;
+`;
+
+export const TextCadastrar = styled.Text`
+    font-weight: bold;
+    color: #000;
 `;

@@ -16,7 +16,7 @@ const StackRoutes = () => {
 
         <Stack.Navigator>
             
-            <Stack.Screen
+            {/* <Stack.Screen
                 name='Inicio'
                 component={Inicio}
                 options={{
@@ -29,16 +29,15 @@ const StackRoutes = () => {
             /> 
               <Stack.Screen
                 name='Cadastro'
-                component={Cadastro}
-            />
+                component={Cadastro} */
+            /* /> */}
              <Stack.Screen
                 name='Home'
                 component={TabRoutes}
                 options={{
-                    headerTintColor: '#fff',
-                    headerStyle:{
-                        backgroundColor: 'blue'
-                    }
+                    
+                    headerShown: false,
+                   
                 }}
             />
         </Stack.Navigator>
