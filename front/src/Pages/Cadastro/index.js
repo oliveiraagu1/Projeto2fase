@@ -3,6 +3,7 @@ import * as G from '../../styles/styles_adm';
 import * as C from './style';
 import api from '../../Services/Api/api';
 import * as Yup from 'yup';
+import { StatusBar } from 'react-native';
 
 const Cadastro = ({ navigation }) => {
 
@@ -64,7 +65,13 @@ const Cadastro = ({ navigation }) => {
 
     return (
 
+
+
         <C.Container>
+
+            <StatusBar
+                hidden={false}
+            />
             <C.Scroll>
                 <C.Title>CADASTRE-SE</C.Title>
                 <G.Texto>Email</G.Texto>
@@ -90,7 +97,7 @@ const Cadastro = ({ navigation }) => {
                     <C.StatusTextSuccess>{status.type === 'success' ? status.message : ""}</C.StatusTextSuccess>
                     <C.StatusTextDanger>{status.type === 'error' ? status.message : ""}</C.StatusTextDanger>
                 </C.Status>
-             
+
 
                 <G.Button onPress={Cadastrar}>
                     <G.TextButton>ENVIAR</G.TextButton>
