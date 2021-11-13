@@ -1,10 +1,14 @@
 import React from 'react';
-import { StatusBar, Text, View, TouchableOpacity } from 'react-native';
-
+import { StatusBar, Text,ScrollView, View, TouchableOpacity } from 'react-native';
+import Pontos from '../pontosHistoricos/Pontos'
 import * as G from '../../styles/styles_adm';
 import * as C from './style';
 
 const Home = () => {
+
+    const pontosHistoricos = () => {
+        navigation.navigate('Pontos');
+    };
 
     return (
 
@@ -16,6 +20,7 @@ const Home = () => {
             <C.Title>Selecione uma região</C.Title>
             <Text>Ingleses</Text>
 
+            <ScrollView>
             <G.MainViewInfo>
                 <G.InfoView>
                     <G.InfoButton>
@@ -42,12 +47,13 @@ const Home = () => {
                 </G.InfoView>
 
                 <G.InfoView>
-                    <G.InfoButton>
+                    <G.InfoButton onPress={Pontos}>
                         <G.InfoText>Pontos Historicos</G.InfoText>
                     </G.InfoButton>
                 </G.InfoView>
 
             </G.MainViewInfo>
+            </ScrollView>
 
         </C.Container>
     )

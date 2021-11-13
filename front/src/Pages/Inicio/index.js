@@ -11,7 +11,7 @@ const Inicio = ({ navigation }) => {
                 hidden={true}
             />
             <C.Image
-                source={require('../../Assets/logo.png')}
+                source={require('../../Assets/logo-home.png')}
             />
             <C.Titulo>PLACES TO GO</C.Titulo>
             <C.Button onPress={() => navigation.navigate('Login')}>

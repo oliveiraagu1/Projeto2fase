@@ -35,14 +35,13 @@ export const TextButton = styled.Text`
 `;
 
 export const LogoImage = styled.Image`
-    width: 26%;
-    height: 13%;
-    border-radius: 350px;
-    margin-left: 110px;
+  width: 105px;
+  height: 105px;
 `;
 
 export const MainViewInfo = styled.View`
-    flex-direction: row;
+    flex-direction: column;
+    height: 50%;
 
 `;
 
