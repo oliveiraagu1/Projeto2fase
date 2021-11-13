@@ -19,10 +19,8 @@ const THEME_COLOR = '#1E88E5';
 const Home = () => {
 
 
-
     return (
 
-<<<<<<< HEAD
         <>
             <SafeAreaView style={{ flex: 0, backgroundColor: THEME_COLOR }}></SafeAreaView>
             <C.Container  >
@@ -84,53 +82,6 @@ const Home = () => {
             </C.Container>
 
         </>
-=======
-        <C.Container>
-            <StatusBar
-                backgroundColor="blue"
-            />
-            <C.TextUser>Olá exemplo!</C.TextUser>
-            <G.LogoImage
-                source={require('../../Assets/logo.png')}
-            />
-            <C.Title>Selecione uma região</C.Title>
-            <Text>Ingleses</Text>
-
-            <G.MainViewInfo>
-                <G.InfoView>
-                    <G.InfoButton>
-                        <G.InfoText>Restaurantes</G.InfoText>
-                    </G.InfoButton>
-                </G.InfoView>
-
-                <G.InfoView>
-                    <G.InfoButton>
-                        <G.InfoText>Boates</G.InfoText>
-                    </G.InfoButton>
-                </G.InfoView>
-
-                <G.InfoView>
-                    <G.InfoButton>
-                        <G.InfoText>Atrações</G.InfoText>
-                    </G.InfoButton>
-                </G.InfoView>
-
-                <G.InfoView>
-                    <G.InfoButton>
-                        <G.InfoText>Praias</G.InfoText>
-                    </G.InfoButton>
-                </G.InfoView>
-
-                <G.InfoView>
-                    <G.InfoButton>
-                        <G.InfoText>Pontos Historicos</G.InfoText>
-                    </G.InfoButton>
-                </G.InfoView>
-
-            </G.MainViewInfo>
-
-        </C.Container>
->>>>>>> 33a3f8513a36b2da9b43f32547ad9cdfe6e1231d
     )
 
 }

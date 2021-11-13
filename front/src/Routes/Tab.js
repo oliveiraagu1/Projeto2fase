@@ -7,6 +7,7 @@ import PerfilIcon from '../Assets/TabNav/perfil.svg'
 import Home from '../Pages/Home';
 import Perfil from '../Pages/Perfil';
 import Teste from '../Pages/Teste';
+import Pontos from '../Pages/pontosHistoricos/Pontos';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,6 +43,13 @@ export default function TabRoutes() {
             <Tab.Screen
                 name="Teste"
                 component={Teste}
+                options={{
+                    headerShown: false
+                }}
+            />
+            <Tab.Screen 
+                name="PontosHistoricos" 
+                component={Pontos} 
                 options={{
                     headerShown: false
                 }}
