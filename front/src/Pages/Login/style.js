@@ -39,3 +39,15 @@ export const Text = styled.Text`
     color: #2E9AFE;
 
 `;
+
+export const Status = styled.View``;
+
+export const StatusTextDanger = styled.Text`
+    margin-left: 15px;
+    color: red;
+    margin-top: 5px;
+    font-size: 13px;
+`;
+
+
+
