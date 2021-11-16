@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Inicio from '../Pages/Inicio';
 import Login from '../Pages/Login';
 import Cadastro from '../Pages/Cadastro';
+import PontosHistoricos from '../Pages/pontosHistoricos/Pontos';
 import TabRoutes from '../Routes/Tab'
 
 
@@ -31,19 +32,23 @@ const StackRoutes = () => {
                 name='Cadastro'
                 component={Cadastro} */
             /* /> */}
-             <Stack.Screen
+            <Stack.Screen
                 name='Home'
                 component={TabRoutes}
                 options={{
-<<<<<<< HEAD
                     
                     headerShown: false,
                    
-=======
-                    headerShown: false,
->>>>>>> 33a3f8513a36b2da9b43f32547ad9cdfe6e1231d
                 }}
             />
+
+
+            
+            <Stack.Screen
+                name='PontosHistoricos'
+                component={PontosHistoricos}
+            />
+            
         </Stack.Navigator>
     )
 }

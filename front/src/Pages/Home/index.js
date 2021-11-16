@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, Text, StatusBar, SafeAreaView } from 'react-native';
+import {ScrollView, Text, SafeAreaView } from 'react-native';
 import Restaurantes from '../../Assets/categorias/restaurantes.svg'
 import Boates from '../../Assets/categorias/boates.svg'
 import Praias from '../../Assets/categorias/praias.svg'
@@ -16,14 +16,14 @@ const THEME_COLOR = '#1E88E5';
 
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
 
     return (
 
         <>
-            <SafeAreaView style={{ flex: 0, backgroundColor: THEME_COLOR }}></SafeAreaView>
-            <C.Container  >
+            {/* <SafeAreaView style={{ flex: 0, backgroundColor: THEME_COLOR }}></SafeAreaView> */}
+            <C.Container >
                 
                     <C.ContainerHeader>
                         <C.SubContainerHeader >
@@ -70,7 +70,7 @@ const Home = () => {
                         </C.ContainerButtons>
 
                         <C.ContainerButtons>
-                            <C.ButtonPontosHistoricos>
+                            <C.ButtonPontosHistoricos onPress={() => navigation.navigate('PontosHistoricos')}>
                                 <PontosHistoricos width={50} height={43} paddingVertical={38} />
                                 <C.ButtonText>PONTOS HISTÓRICOS</C.ButtonText>
                             </C.ButtonPontosHistoricos>

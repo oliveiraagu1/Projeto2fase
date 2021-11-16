@@ -26,7 +26,9 @@ export default function TabRoutes() {
             }}
         >
             <Tab.Screen
-                name="Home1" component={Home} options={{
+                name="Home1" 
+                component={Home}
+                options={{
                     headerShown: false,
                 }}
 
@@ -43,13 +45,6 @@ export default function TabRoutes() {
             <Tab.Screen
                 name="Teste"
                 component={Teste}
-                options={{
-                    headerShown: false
-                }}
-            />
-            <Tab.Screen 
-                name="PontosHistoricos" 
-                component={Pontos} 
                 options={{
                     headerShown: false
                 }}

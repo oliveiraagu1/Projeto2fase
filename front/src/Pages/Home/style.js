@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-    flex: 1px;    
+    flex: 1px;
     
 `;
 
@@ -11,7 +11,7 @@ export const ContainerHeader = styled.View`
     background-color: #1E88E5;
 `
 export const SubContainerHeader = styled.View`
-
+    
 `
 export const ContainerLogo = styled.View`
     left: 37%;
