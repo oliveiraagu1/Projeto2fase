@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 import * as C from './style';
 
-const Perfil = () => {
+const Perfil = ({navigation}) => {
 
     return (
         
@@ -13,7 +13,7 @@ const Perfil = () => {
                 barStyle='dark-content'
             />
             <C.ContainerHeader>
-                <C.ButtonLeft>
+                <C.ButtonLeft onPress={() => navigation.goBack()}>
                     <Feather name='chevron-left' size={24} color='black' />
                 </C.ButtonLeft>
                 <C.Title>Meu Perfil</C.Title>
