@@ -41,12 +41,12 @@ const StackRoutes = () => {
                    
                 }}
             />
-
-
-            
             <Stack.Screen
                 name='PontosHistoricos'
                 component={PontosHistoricos}
+                options={{
+                    headerShown: false,
+                }}
             />
             
         </Stack.Navigator>

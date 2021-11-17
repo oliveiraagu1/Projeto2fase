@@ -17,13 +17,13 @@ import {
 import { ScrollView } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-const PontosHistoricos = () => {
+const PontosHistoricos = ({navigation}) => {
   return (
     <ScrollView>
       <ContainerPontos>
         <ContainerHeader>
           <TitlePontosHistoricos>PONTOS HISTÓRICOS</TitlePontosHistoricos>
-          <ButtonVoltar>
+          <ButtonVoltar onPress={() => navigation.goBack()}>
             <AntDesign name="left" size={24} color="black" />
           </ButtonVoltar>
         </ContainerHeader>
