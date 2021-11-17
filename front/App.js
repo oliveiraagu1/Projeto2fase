@@ -1,15 +1,15 @@
 import React from 'react';
-
-import {NavigationContainer} from '@react-navigation/native'
+import { NavigationContainer } from '@react-navigation/native'
 import StackRoutes from './src/Routes/Stack';
+import ContextProvider from './src/Context/Contex';
 
 const App = () => {
   return (
-
-    <NavigationContainer>
-      <StackRoutes/>
-    </NavigationContainer>
-    
+    <ContextProvider>
+      <NavigationContainer>
+        <StackRoutes />
+      </NavigationContainer>
+    </ContextProvider>
   );
 }
 
