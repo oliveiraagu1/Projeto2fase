@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
 import * as C from './style';
@@ -6,8 +7,12 @@ import * as C from './style';
 const Perfil = () => {
 
     return (
-
+        
         <C.Container>
+            <StatusBar
+                backgroundColor='#fff'
+                barStyle='dark-content'
+            />
             <C.ContainerHeader>
                 <C.ButtonLeft>
                     <Feather name='chevron-left' size={24} color='black' />
