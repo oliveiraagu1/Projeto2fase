@@ -1,6 +1,7 @@
 import Cadastro from '../models/Cadastro';
 import * as Yup from 'yup';
 
+
 export default {
 
     async cadastro(req, res) {
@@ -74,6 +75,7 @@ export default {
     
             if(login) return res.status(200).json({
                 erro: false,
+                login,
                 mensagem: "Login realizado com sucesso!"
             });
 
@@ -83,6 +85,47 @@ export default {
                 mensagem: err.errors
             });
 
+        };
+    },
+    async getUsers(req, res){
+        const users = await Cadastro.findAll({
+            order: [['id']]
+        });
+
+        try{
+            if(!users) return res.status(400).json({
+                erro: true, 
+                messagem: "Erro: Nenhnum usuário encontrado!"
+            });
+            
+            return res.status(200).json({
+                erro: false,
+                users
+            });
+        }catch(err){
+            return res.status(400).json({
+                erro: true,
+                messagem: `Erro: ${err}`
+            });
+        }
+    },
+    async deleteUser(req, res){
+        await Cadastro.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        try{
+            return res.status(200).json({
+                erro: false,
+                messagem: "Usuário apagado com sucesso!"
+            });
+        }catch(err){
+            return res.status(400).json({
+                erro: true,
+                messagem: "Erro: Usuário não foi apagado!"
+            });
         };
     },
 };
