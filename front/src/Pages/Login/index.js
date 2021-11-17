@@ -15,7 +15,7 @@ const Login = ({ navigation }) => {
     message: "",
   });
 
-  const { setEmailContext, setNameContext } = DadosUsers();
+  const { setDadosUser } = DadosUsers();
 
   const ValidaLogin = async () => {
     const schema = Yup.object().shape({
@@ -43,8 +43,11 @@ const Login = ({ navigation }) => {
         password,
       });
 
-      setEmailContext(result.data.login.email);
-      setNameContext(result.data.login.name);
+      setDadosUser({
+        email: result.data.login.email ,
+        name: result.data.login.name,
+        id: result.data.login.id
+      });
       alert(result.data.mensagem);
       return navigation.navigate("Home");
     } catch (err) {

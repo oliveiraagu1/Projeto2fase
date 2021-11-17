@@ -3,16 +3,18 @@ import React, { createContext, useContext, useState } from "react";
 const ContextUsuario = createContext();
 
 const ContextProvider = ({ children }) => {
-  const [emailContext, setEmailContext] = useState("");
-  const [nameContext, setNameContext] = useState("");
+  const [dadosUser, setDadosUser] = useState({
+    email: "",
+    name: "",
+    id: ""
+  });
+  
 
   return (
     <ContextUsuario.Provider
       value={{
-        emailContext,
-        setEmailContext,
-        nameContext,
-        setNameContext,
+        dadosUser,
+        setDadosUser
       }}
     >
       {children}
@@ -22,9 +24,8 @@ const ContextProvider = ({ children }) => {
 
 export const DadosUsers = () => {
   const context = useContext(ContextUsuario);
-  const { emailContext, setEmailContext, nameContext, setNameContext } =
-    context;
-  return { emailContext, setEmailContext, nameContext, setNameContext };
+  const { dadosUser, setDadosUser } = context;
+  return { dadosUser, setDadosUser };
 };
 
 export default ContextProvider;

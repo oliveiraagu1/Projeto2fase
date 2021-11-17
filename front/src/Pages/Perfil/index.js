@@ -5,7 +5,7 @@ import * as C from "./style";
 import { DadosUsers } from "../../Context/Contex";
 
 const Perfil = ({ navigation }) => {
-  const { emailContext, nameContext } = DadosUsers();
+  const { dadosUser } = DadosUsers();
 
   return (
     <C.Container>
@@ -20,8 +20,8 @@ const Perfil = ({ navigation }) => {
         </C.ButtonRight>
       </C.ContainerHeader>
       <C.Info>
-        <C.Name>{nameContext}</C.Name>
-        <C.Email>{emailContext}</C.Email>
+        <C.Name>{dadosUser.name}</C.Name>
+        <C.Email>{dadosUser.email}</C.Email>
       </C.Info>
 
       <C.MenuBottons>
