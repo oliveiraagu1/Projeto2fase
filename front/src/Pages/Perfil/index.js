@@ -1,7 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { Feather } from "@expo/vector-icons";
-
 import * as C from './style';
 
 const Perfil = () => {
