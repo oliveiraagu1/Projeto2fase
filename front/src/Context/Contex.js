@@ -1,25 +1,30 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const ContextUsuario = createContext();
 
-const ContextProvider = ({children})=> {
+const ContextProvider = ({ children }) => {
+  const [emailContext, setEmailContext] = useState("");
+  const [nameContext, setNameContext] = useState("");
 
-    const [dados, setDados] = useState('');
-
-    return(
-        <ContextUsuario.Provider
-            value={{
-                dados,
-                setDados
-            }}
-        >{children}</ContextUsuario.Provider>
-    )
-}
+  return (
+    <ContextUsuario.Provider
+      value={{
+        emailContext,
+        setEmailContext,
+        nameContext,
+        setNameContext,
+      }}
+    >
+      {children}
+    </ContextUsuario.Provider>
+  );
+};
 
 export const DadosUsers = () => {
-    const context = useContext(ContextUsuario);
-    const {dados, setDados} = context;
-    return {dados, setDados}; 
-}
+  const context = useContext(ContextUsuario);
+  const { emailContext, setEmailContext, nameContext, setNameContext } =
+    context;
+  return { emailContext, setEmailContext, nameContext, setNameContext };
+};
 
 export default ContextProvider;
