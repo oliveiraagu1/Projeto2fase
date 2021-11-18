@@ -1,11 +1,43 @@
 import React from "react";
+import { Alert } from "react-native";
 import { StatusBar } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import * as C from "./style";
 import { DadosUsers } from "../../Context/Contex";
+import api from "../../Services/Api/api";
+import * as C from "./style";
 
 const Perfil = ({ navigation }) => {
-  const { dadosUser } = DadosUsers();
+  const { dadosUser, setDadosUser } = DadosUsers();
+
+  const Sair = () => {
+    Alert.alert("Deseja realmente sair?", "", [
+      {
+        text: "Ok",
+        onPress: () => {
+          setDadosUser("");
+          navigation.navigate("Inicio");
+        },
+      },
+      { text: "Cancelar" },
+    ]);
+  };
+
+  const AlertDelete = () => {
+    Alert.alert("Deseja realmente deletar sua conta?", "", [
+      { text: "Ok", onPress: DeleteUser },
+      { text: "Cancelar" },
+    ]);
+  };
+  const DeleteUser = async () => {
+    const id = dadosUser.id;
+    try {
+      const result = await api.delete(`delete/${id}`);
+      Alert.alert(result.data.messagem);
+      return navigation.navigate("Inicio");
+    } catch (err) {
+      return Alert.alert("Não foi possível deletar o usuário, tente mais tarde!");
+    }
+  };
 
   return (
     <C.Container>
@@ -37,10 +69,10 @@ const Perfil = ({ navigation }) => {
           <C.TextButtons>Favoritos</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
         </C.Buttons>
-        <C.Buttons>
+        <C.Buttons onPress={Sair}>
           <C.TextButtons>Sair</C.TextButtons>
         </C.Buttons>
-        <C.Buttons>
+        <C.Buttons onPress={AlertDelete}>
           <C.TextButtons style={{ color: "red" }}>Excluir Conta</C.TextButtons>
         </C.Buttons>
       </C.MenuBottons>
