@@ -14,7 +14,7 @@ const Cadastro = ({ navigation }) => {
     const [status, setStatus] = useState({
         type: '',
         message: ''
-    })
+    });
 
     const ValidaCadastro = async () => {
         const schema = Yup.object().shape({
@@ -43,7 +43,7 @@ const Cadastro = ({ navigation }) => {
 
     const Cadastrar = async () => {
 
-        ValidaCadastro();
+        if (!(await ValidaCadastro())) return;
 
         try {
 
