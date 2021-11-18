@@ -18,21 +18,15 @@ const Stack = createNativeStackNavigator();
 const StackRoutes = () => {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
-                name='Inicio'
-                component={Inicio}
-                options={{
-                    headerShown: false
-                }}
-            /> 
-              <Stack.Screen
-                name='Login'
-                component={Login}
-            /> 
-              <Stack.Screen
-                name='Cadastro'
-                component={Cadastro} */
-      /* /> */}
+      <Stack.Screen
+        name="Inicio"
+        component={Inicio}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Cadastro" component={Cadastro} />
       <Stack.Screen
         name="Home"
         component={TabRoutes}
@@ -46,6 +40,13 @@ const StackRoutes = () => {
       <Stack.Screen name="Forte" component={Forte} />
       <Stack.Screen name="Praca" component={Praca} />
       <Stack.Screen name="Engenho" component={Engenho} />
+      <Stack.Screen
+        name="PontosHistoricos"
+        component={PontosHistoricos}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };

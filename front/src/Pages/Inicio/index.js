@@ -1,7 +1,5 @@
 import React from 'react';
 import { StatusBar } from 'react-native'
-import { withTheme } from 'styled-components/native';
-
 import * as C from './style';
 
 const Inicio = ({ navigation }) => {
@@ -14,7 +12,6 @@ const Inicio = ({ navigation }) => {
             <C.Image
                 source={require('../../Assets/logo-home.png')}
             />
-            <C.Titulo>PLACES TO GO</C.Titulo>
             <C.ButtonEntrar onPress={() => navigation.navigate('Login')}>
                 <C.TextEntrar>ENTRAR</C.TextEntrar>
             </C.ButtonEntrar>

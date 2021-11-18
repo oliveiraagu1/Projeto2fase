@@ -9,7 +9,7 @@ const PontosHistoricos = ({navigation}) => {
       <C.ContainerPontos>
         <C.ContainerHeader>
           <C.TitlePontosHistoricos>PONTOS HISTÓRICOS</C.TitlePontosHistoricos>
-          <C.ButtonVoltar>
+          <C.ButtonVoltar onPress={() => navigation.goBack()}>
             <AntDesign name="left" size={24} color="black" />
           </C.ButtonVoltar>
         </C.ContainerHeader>

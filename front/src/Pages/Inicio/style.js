@@ -15,13 +15,6 @@ export const Image = styled.Image`
   
 `;
 
-export const Titulo = styled.Text`
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
-    margin-bottom: 80px;
-`;
-
 export const ButtonEntrar = styled.TouchableOpacity`
    border-width: 1px;
    background-color: #0d47a1;

@@ -27,8 +27,6 @@ export default function TabRoutes() {
                 options={{
                     headerShown: false,
                 }}
-
-
             />
             <Tab.Screen
                 name="Perfil"
@@ -36,7 +34,6 @@ export default function TabRoutes() {
                 options={{
                     headerShown: false
                 }}
-
             />
             <Tab.Screen
                 name="Teste"
