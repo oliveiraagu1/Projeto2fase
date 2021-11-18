@@ -7,7 +7,7 @@ import Login from "../Pages/Login";
 import Cadastro from "../Pages/Cadastro";
 import PontosHistoricos from "../Pages/pontosHistoricos/HomePontos";
 import Palacio from "../Pages/pontosHistoricos/locais/Palacio";
-import Catedral from '../Pages/pontosHistoricos/locais/Catedral'
+import Catedral from '../Pages/pontosHistoricos/locais/Catedral';
 import Forte from '../Pages/pontosHistoricos/locais/Forte'
 import Praca from '../Pages/pontosHistoricos/locais/Praca'
 import Engenho from '../Pages/pontosHistoricos/locais/Engenho'

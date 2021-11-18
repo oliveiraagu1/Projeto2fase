@@ -3,6 +3,7 @@ import { Alert } from "react-native";
 import { StatusBar } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { DadosUsers } from "../../Context/Contex";
+import ModalPerfil from "./Modal";
 import api from "../../Services/Api/api";
 import * as C from "./style";
 
@@ -28,6 +29,7 @@ const Perfil = ({ navigation }) => {
       { text: "Cancelar" },
     ]);
   };
+
   const DeleteUser = async () => {
     const id = dadosUser.id;
     try {
@@ -35,7 +37,9 @@ const Perfil = ({ navigation }) => {
       Alert.alert(result.data.messagem);
       return navigation.navigate("Inicio");
     } catch (err) {
-      return Alert.alert("Não foi possível deletar o usuário, tente mais tarde!");
+      return Alert.alert(
+        "Não foi possível deletar o usuário, tente mais tarde!"
+      );
     }
   };
 
@@ -55,12 +59,12 @@ const Perfil = ({ navigation }) => {
         <C.Name>{dadosUser.name}</C.Name>
         <C.Email>{dadosUser.email}</C.Email>
       </C.Info>
-
       <C.MenuBottons>
         <C.Buttons>
           <C.TextButtons>Trocar Apelido</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
         </C.Buttons>
+        <ModalPerfil/>
         <C.Buttons>
           <C.TextButtons>Trocar Senha</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
@@ -79,5 +83,4 @@ const Perfil = ({ navigation }) => {
     </C.Container>
   );
 };
-
 export default Perfil;

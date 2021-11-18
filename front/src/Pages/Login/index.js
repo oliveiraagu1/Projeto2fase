@@ -44,7 +44,7 @@ const Login = ({ navigation }) => {
       });
 
       setDadosUser({
-        email: result.data.login.email ,
+        email: result.data.login.email,
         name: result.data.login.name,
         id: result.data.login.id
       });
