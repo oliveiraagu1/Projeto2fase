@@ -34,19 +34,12 @@ const StackRoutes = () => {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="PontosHistoricos" component={PontosHistoricos} />
+      <Stack.Screen name="PontosHistoricos" component={PontosHistoricos} options={{headerShown: false}} />
       <Stack.Screen name="Palacio" component={Palacio} />
       <Stack.Screen name="Catedral" component={Catedral} />
       <Stack.Screen name="Forte" component={Forte} />
       <Stack.Screen name="Praca" component={Praca} />
       <Stack.Screen name="Engenho" component={Engenho} />
-      <Stack.Screen
-        name="PontosHistoricos"
-        component={PontosHistoricos}
-        options={{
-          headerShown: false,
-        }}
-      />
     </Stack.Navigator>
   );
 };
