@@ -110,9 +110,10 @@ export default {
         }
     },
     async deleteUser(req, res){
-        await Cadastro.destroy({
+        const {id} = req.params;
+        const user = await Cadastro.destroy({
             where: {
-                id: req.params.id
+                id
             }
         });
 
@@ -127,5 +128,40 @@ export default {
                 messagem: "Erro: Usuário não foi apagado!"
             });
         };
+    },
+    async editName(req, res){
+        
+        const schema = Yup.object().shape({
+            name: Yup.string()
+                .required("Erro: O campo Name é obrigátorio!")
+                .min(3, "Erro: O Campo Name precisa ter pelo menos 3 caracteres!")
+        });
+        
+        try{
+            await schema.validate(req.body);
+            const {name} = req.body;
+            const {id} = req.params;
+            const user = await Cadastro.update(
+                {
+                    name
+                },
+                {
+                    where: {
+                     id
+                    }
+                }
+            )
+            return res.status(200).json({
+                erro: false,
+                messagem: "Foi alterado o nome com sucesso!"
+            });
+
+        }catch(err){
+            return res.status(400).json({
+                erro: true,
+                messagem: err.message
+            });
+        }
+
     },
 };
