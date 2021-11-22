@@ -8,5 +8,6 @@ routes.post('/cadastro', CadastroController.cadastro);
 routes.post('/login', CadastroController.login);
 routes.delete('/delete/:id', CadastroController.deleteUser);
 routes.patch('/editar/:id', CadastroController.editName);
+routes.patch('/editarPass/:id', CadastroController.editPassword);
 
 export default routes;
