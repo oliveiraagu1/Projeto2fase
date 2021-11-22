@@ -1,19 +1,26 @@
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 import { Alert } from "react-native";
 import { StatusBar } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { DadosUsers } from "../../Context/Contex";
 import { Modalize } from "react-native-modalize";
-import ModalPerfil from "./Modal/Name";
+import ModalPerfilName from "./Modal/Name";
+import ModalPerfilPassword from "./Modal/Password";
 import api from "../../Services/Api/api";
 import * as C from "./style";
 
 const Perfil = ({ navigation }) => {
-  const modalizeRef = useRef(null);
-  
+  const modalizeRefName = useRef(null);
+  const modalizeRefPassword = useRef(null);
+
   const { dadosUser, setDadosUser } = DadosUsers();
-  const onOpen = () => {
-    modalizeRef.current?.open();
+
+  const onOpenName = () => {
+    modalizeRefName.current?.open();
+  };
+
+  const onOpenPassword = () => {
+    modalizeRefPassword.current?.open();
   };
 
   const Sair = () => {
@@ -51,7 +58,12 @@ const Perfil = ({ navigation }) => {
 
   return (
     <C.Container>
-      <Modalize ref={modalizeRef} snapPoint={350} modalHeight={550}><ModalPerfil/></Modalize>
+      <Modalize ref={modalizeRefName} snapPoint={350} modalHeight={550}>
+        <ModalPerfilName />
+      </Modalize>
+      <Modalize ref={modalizeRefPassword} snapPoint={350} modalHeight={550}>
+        <ModalPerfilPassword />
+      </Modalize>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <C.ContainerHeader>
         <C.ButtonLeft onPress={() => navigation.goBack()}>
@@ -67,11 +79,11 @@ const Perfil = ({ navigation }) => {
         <C.Email>{dadosUser.email}</C.Email>
       </C.Info>
       <C.MenuBottons>
-        <C.Buttons onPress={onOpen}>
+        <C.Buttons onPress={onOpenName}>
           <C.TextButtons>Trocar Apelido</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
         </C.Buttons>
-        <C.Buttons>
+        <C.Buttons onPress={onOpenPassword}>
           <C.TextButtons>Trocar Senha</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
         </C.Buttons>

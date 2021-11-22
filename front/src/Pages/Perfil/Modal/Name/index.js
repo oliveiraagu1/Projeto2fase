@@ -4,11 +4,11 @@ import api from "../../../../Services/Api/api";
 import * as Yup from "yup";
 import * as C from "./style";
 
-const ModalPerfil = () => {
+const ModalPerfilName = () => {
   const [newName, setNewName] = useState("");
   const [status, setStatus] = useState({
     type: "",
-    message: "",
+    message: ""
   });
 
   const { dadosUser, setDadosUser } = DadosUsers();
@@ -18,7 +18,7 @@ const ModalPerfil = () => {
   const ValidaName = async () => {
     const schema = Yup.object().shape({
       newName: Yup.string()
-        .required("Erro: Campo nome é obrigátorio!")
+        .required("Erro: Campo nome é obrigatório!")
         .min(3, "Erro: Campo nome precisa ter pelo menos 3 caracteres!"),
     });
     try {
@@ -26,7 +26,7 @@ const ModalPerfil = () => {
     } catch (err) {
       return setStatus({
         type: "error",
-        message: err.message,
+        message: err.message
       });
     }
   };
@@ -37,7 +37,7 @@ const ModalPerfil = () => {
       const id = dadosUser.id;
 
       const result = await api.patch(`editar/${id}`, {
-        name: newName,
+        name: newName
       });
 
       setDadosUser({
@@ -45,12 +45,11 @@ const ModalPerfil = () => {
         name: newName,
         email: dadosUser.email,
       });
-      setStatus({
+      return setStatus({
         type: "success",
-        message: "O nome foi alterado com sucesso!",
+        message: "O nome foi alterado com sucesso!"
       });
-
-      return;
+      
     } catch (err) {
       setStatus({
         type: "error",
@@ -95,4 +94,4 @@ const ModalPerfil = () => {
   );
 };
 
-export default ModalPerfil;
+export default ModalPerfilName;

@@ -59,6 +59,7 @@ export const TextButton = styled.Text`
 `;
 
 export const Status = styled.View``;
+
 export const StatusSuccess = styled.Text`
     color: green;
 `;
