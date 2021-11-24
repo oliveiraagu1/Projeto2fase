@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
         <C.ContainerPai>
           <ScrollView>
             <C.ContainerButtons>
-              <C.ButtonsCategorias>
+              <C.ButtonsCategorias onPress={() => navigation.navigate("Restaurantes")}>
                 <Restaurantes width={60} height={60} paddingVertical={38} />
                 <C.ButtonText>RESTAURANTES</C.ButtonText>
               </C.ButtonsCategorias>
