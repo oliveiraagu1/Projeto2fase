@@ -1,14 +1,14 @@
 import React from "react";
-import * as C from "./style";
+import * as C from "../../../../styles/styles_adm";
 import { Ionicons } from "@expo/vector-icons";
 import Stars from "react-native-stars";
 
 const FlatListRest = ({ data }) => {
   return (
-    <C.ContainerFlat>
+    <>
       <C.ScrollFlat>
         <C.ViewFlat>
-          <C.ButtonFlat>
+          <C.ButtonFlat activeOpacity={0.7}>
             <C.ImgFlat source={data.img} />
           </C.ButtonFlat>
         </C.ViewFlat>
@@ -20,13 +20,17 @@ const FlatListRest = ({ data }) => {
             half={true}
             starSize={24}
             fullStar={<Ionicons name="md-star" size={24} color="#e7a74e" />}
-            emptyStar={<Ionicons name="md-star-outline" size={24} color="#e7a74e" />}
-            halfStar={<Ionicons name="md-star-half" size={24} color="#e7a74e" />}
+            emptyStar={
+              <Ionicons name="md-star-outline" size={24} color="#e7a74e" />
+            }
+            halfStar={
+              <Ionicons name="md-star-half" size={24} color="#e7a74e" />
+            }
             disable={true}
           />
         </C.ViewInfo>
       </C.ScrollFlat>
-    </C.ContainerFlat>
+    </>
   );
 };
 
