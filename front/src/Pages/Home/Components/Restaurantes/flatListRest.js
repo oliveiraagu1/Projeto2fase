@@ -1,6 +1,7 @@
 import React from "react";
 import * as C from "./style";
-import { Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import Stars from "react-native-stars";
 
 const FlatListRest = ({ data }) => {
   return (
@@ -13,7 +14,16 @@ const FlatListRest = ({ data }) => {
         </C.ViewFlat>
         <C.ViewInfo>
           <C.TitleFlat>{data.title}</C.TitleFlat>
-          <Feather name="star" size={24} color="black" />
+          <Stars
+            default={data.avaliacao}
+            count={5}
+            half={true}
+            starSize={24}
+            fullStar={<Ionicons name="md-star" size={24} color="#e7a74e" />}
+            emptyStar={<Ionicons name="md-star-outline" size={24} color="#e7a74e" />}
+            halfStar={<Ionicons name="md-star-half" size={24} color="#e7a74e" />}
+            disable={true}
+          />
         </C.ViewInfo>
       </C.ScrollFlat>
     </C.ContainerFlat>
