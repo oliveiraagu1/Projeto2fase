@@ -19,12 +19,12 @@ const FlatListRest = ({ data }) => {
             count={5}
             half={true}
             starSize={24}
-            fullStar={<Ionicons name="md-star" size={24} color="#e7a74e" />}
+            fullStar={<Ionicons name="md-star" size={24} color="#ffd00a" />}
             emptyStar={
-              <Ionicons name="md-star-outline" size={24} color="#e7a74e" />
+              <Ionicons name="md-star-outline" size={24} color="#ffd00a" />
             }
             halfStar={
-              <Ionicons name="md-star-half" size={24} color="#e7a74e" />
+              <Ionicons name="md-star-half" size={24} color="#ffd00a" />
             }
             disable={true}
           />
