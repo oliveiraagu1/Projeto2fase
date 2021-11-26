@@ -10,7 +10,7 @@ export const ContainerHeader = styled.View`
 `;
 export const SubContainerHeader = styled.View`
   width: 100%;
-  margin-top: 60px;
+  margin-top: 50px;
   
 `;
 
@@ -36,8 +36,8 @@ export const ViewUser = styled.View`
 `;
 
 export const TextUser = styled.Text`
-  margin-top: 45px;
+  margin-top: 30px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   color: #FFF;
 `; 
