@@ -41,7 +41,9 @@ const Home = ({ navigation }) => {
               <C.ButtonText>RESTAURANTES</C.ButtonText>
             </C.ButtonsCategorias>
 
-            <C.ButtonsCategorias>
+            <C.ButtonsCategorias
+              onPress={() => navigation.navigate("Boates")}
+            >
               <Boates width={60} height={60} paddingVertical={38} />
               <C.ButtonText>BOATES</C.ButtonText>
             </C.ButtonsCategorias>

@@ -65,15 +65,21 @@ export const HeaderInfo = styled.View`
 `;
 
 export const ButtonIcon = styled.TouchableOpacity`
-  margin: 5px;
-  margin-left: 77px;
-
+  margin: 6px;
+  margin-left: 50px;
+  
 `;
 
-export const Title = styled.Text`
+export const TitleRes = styled.Text`
   font-size: 25px;
   font-weight: bold;
-  
+  margin-left: 30px;
+`;
+
+export const TitleBoat = styled.Text`
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 60px;
 `;
 
 export const MainView = styled.View`
@@ -83,12 +89,9 @@ export const MainView = styled.View`
 
 export const Main = styled.FlatList``;
 
-export const ScrollFlat = styled.ScrollView`
-`;
+export const ScrollFlat = styled.ScrollView``;
 
-export const ViewFlat = styled.View`
-
-`;
+export const ViewFlat = styled.View``;
 
 export const ButtonFlat = styled.TouchableOpacity`
   border-width: 1px;

@@ -7,6 +7,7 @@ import Login from "../Pages/Login";
 import Cadastro from "../Pages/Cadastro";
 
 import Restaurantes from "../Pages/Home/Components/Restaurantes";
+import Boates from "../Pages/Home/Components/Boates";
 
 import PontosHistoricos from "../Pages/pontosHistoricos/HomePontos";
 import Palacio from "../Pages/pontosHistoricos/locais/Palacio";
@@ -51,6 +52,13 @@ const StackRoutes = () => {
       <Stack.Screen
         name="Restaurantes"
         component={Restaurantes}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Boates"
+        component={Boates}
         options={{
           headerShown: false,
         }}

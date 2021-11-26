@@ -1,5 +1,5 @@
 import React from "react";
-import * as C from "../../../../styles/styles_adm";
+import * as C from "../../../styles/styles_adm";
 import { Ionicons } from "@expo/vector-icons";
 import Stars from "react-native-stars";
 

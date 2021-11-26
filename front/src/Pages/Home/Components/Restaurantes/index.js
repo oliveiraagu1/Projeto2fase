@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FlatListRest from "./flatListRest";
+import FlatListRest from "../flatListRest";
 import { Feather } from "@expo/vector-icons";
 import Header from "../../../../Components/Header";
 import * as C from "../../../../styles/styles_adm";
@@ -9,49 +9,49 @@ const Restaurantes = ({ navigation }) => {
     {
       id: 1,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 2.5,
     },
     {
       id: 2,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 1.5,
     },
     {
       id: 3,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 5.0,
     },
     {
       id: 4,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 1.5,
     },
     {
       id: 5,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 2.5,
     },
     {
       id: 6,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 4.5,
     },
     {
       id: 7,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 2.5,
     },
     {
       id: 8,
       title: "Restaurante do Quinha",
-      img: require("./teste.jpg"),
+      img: require("../teste.jpg"),
       avaliacao: 3.0,
     },
   ]);
@@ -62,7 +62,7 @@ const Restaurantes = ({ navigation }) => {
         <C.ButtonIcon onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={24} color="black" />
         </C.ButtonIcon>
-        <C.Title>Restaurantes</C.Title>
+        <C.TitleRes>Restaurantes</C.TitleRes>
       </C.HeaderInfo>
 
       <C.MainView>
