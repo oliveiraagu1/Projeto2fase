@@ -6,9 +6,6 @@ const Inicio = ({ navigation }) => {
 
     return (
         <C.Container>
-            <StatusBar
-                hidden={true}
-            />
             <C.Image
                 source={require('../../Assets/logo-home.png')}
             />

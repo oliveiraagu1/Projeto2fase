@@ -60,7 +60,6 @@ const Login = ({ navigation }) => {
 
   return (
     <C.Container>
-      <StatusBar hidden={false} />
 
       <C.ImageTop source={require("../../Assets/Login/imageTop.png")} />
 

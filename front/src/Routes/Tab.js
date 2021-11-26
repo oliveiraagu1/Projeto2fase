@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import PerfilIcon from "../Assets/TabNav/perfil.svg";
 import Home from "../Pages/Home";
 import Perfil from "../Pages/Perfil";
-import Teste from "../Pages/Teste";
-import ButtonNew from "../Pages/Teste/ButtonNew";
+import NewInfo from "../Pages/New";
+import ButtonNew from "../Pages/New/ButtonNew";
 
 import { Entypo, Feather } from "@expo/vector-icons";
 
@@ -36,7 +36,7 @@ export default function TabRoutes() {
       />
       <Tab.Screen
         name="Novo"
-        component={Teste}
+        component={NewInfo}
         options={{
           tabBarLabel: "",
           tabBarIcon: ({ focused, size }) => (
