@@ -44,3 +44,12 @@ export const ButtonPontosHistoricos = styled.TouchableOpacity`
   align-items: center;
   border-radius: 16px;
 `;
+
+export const ViewInfo = styled.View`
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f0f5;
+`;
+
+export const SelectFlat = styled.FlatList``;
+

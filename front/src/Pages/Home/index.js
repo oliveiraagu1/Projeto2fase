@@ -14,7 +14,12 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{backgroundColor: "#1e88e5"}}>
       <Header dados={"Olá "+dadosUser.name+"!"} />
+      <C.ViewInfo>
+          <C.Title>Selecione uma região!</C.Title>
+          <C.SelectFlat/>
+        </C.ViewInfo>
       <C.ContainerPai>
+  
         <ScrollView >
           <C.ContainerButtons>
             <C.ButtonsCategorias
