@@ -59,52 +59,40 @@ export const InfoText = styled.Text`
 
 // Estilização dos sub-components da Home
 
-export const Container = styled.SafeAreaView`
-  flex: 1px;
-`;
 
-export const ContainerHeader = styled.View`
-  margin: 0 auto;
-  width: 100%;
-  background-color: #1e88e5;
-`;
-export const SubContainerHeader = styled.View``;
 
-export const ContainerLogo = styled.View`
-  left: 37%;
-  z-index: 10;
-  position: absolute;
-  margin-top: 20px;
-`;
-export const ContainerSelect = styled.View`
-  width: 100%;
-  border-top-left-radius: 30px;
-  background-color: #fff;
-  padding-top: 20px;
-  border-top-right-radius: 30px;
-`;
+
 
 export const HeaderInfo = styled.View`
   flex-direction: row;
-  margin: 30px;
+  margin: 20px;
 `;
 
 export const ButtonIcon = styled.TouchableOpacity`
   margin: 5px;
+  margin-left: 77px;
+
 `;
 
 export const Title = styled.Text`
   font-size: 25px;
   font-weight: bold;
+  
 `;
 
-export const MainView = styled.View``;
+export const MainView = styled.View`
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Main = styled.FlatList``;
 
-export const ScrollFlat = styled.ScrollView``;
+export const ScrollFlat = styled.ScrollView`
+`;
 
-export const ViewFlat = styled.View``;
+export const ViewFlat = styled.View`
+
+`;
 
 export const ButtonFlat = styled.TouchableOpacity`
   border-width: 1px;
@@ -115,7 +103,7 @@ export const ImgFlat = styled.Image`
   border-radius: 15px;
 `;
 
-export const ViewInfo = styled.View`
+export const ViewInfoFlat = styled.View`
   align-items: center;
   justify-content: center;
   margin-top: 5px;

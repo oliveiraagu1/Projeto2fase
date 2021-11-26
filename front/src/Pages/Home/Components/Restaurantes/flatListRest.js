@@ -12,7 +12,7 @@ const FlatListRest = ({ data }) => {
             <C.ImgFlat source={data.img} />
           </C.ButtonFlat>
         </C.ViewFlat>
-        <C.ViewInfo>
+        <C.ViewInfoFlat>
           <C.TitleFlat>{data.title}</C.TitleFlat>
           <Stars
             default={data.avaliacao}
@@ -28,7 +28,7 @@ const FlatListRest = ({ data }) => {
             }
             disable={true}
           />
-        </C.ViewInfo>
+        </C.ViewInfoFlat>
       </C.ScrollFlat>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FlatListRest from "./flatListRest";
 import { Feather } from "@expo/vector-icons";
+import Header from "../../../../Components/Header";
 import * as C from "../../../../styles/styles_adm";
 
 const Restaurantes = ({ navigation }) => {
@@ -55,7 +56,8 @@ const Restaurantes = ({ navigation }) => {
     },
   ]);
   return (
-    <C.Container>
+    <>
+      <Header/>
       <C.HeaderInfo>
         <C.ButtonIcon onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={24} color="black" />
@@ -70,7 +72,7 @@ const Restaurantes = ({ navigation }) => {
           renderItem={({ item }) => <FlatListRest data={item} />}
         />
       </C.MainView>
-    </C.Container>
+    </>
   );
 };
 
