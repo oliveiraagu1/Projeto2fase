@@ -8,6 +8,7 @@ import Cadastro from "../Pages/Cadastro";
 
 import Restaurantes from "../Pages/Home/Components/Restaurantes";
 import Boates from "../Pages/Home/Components/Boates";
+import Atracoes from '../Pages/Home/Components/Atracoes';
 
 import PontosHistoricos from "../Pages/pontosHistoricos/HomePontos";
 import Palacio from "../Pages/pontosHistoricos/locais/Palacio";
@@ -59,6 +60,13 @@ const StackRoutes = () => {
       <Stack.Screen
         name="Boates"
         component={Boates}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Atracoes"
+        component={Atracoes}
         options={{
           headerShown: false,
         }}

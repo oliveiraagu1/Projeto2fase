@@ -67,7 +67,7 @@ export const HeaderInfo = styled.View`
 export const ButtonIcon = styled.TouchableOpacity`
   margin: 6px;
   margin-left: 50px;
-  
+
 `;
 
 export const TitleRes = styled.Text`
@@ -80,6 +80,11 @@ export const TitleBoat = styled.Text`
   font-size: 25px;
   font-weight: bold;
   margin-left: 60px;
+`;
+export const TitleAtracoes = styled.Text`
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 45px;
 `;
 
 export const MainView = styled.View`

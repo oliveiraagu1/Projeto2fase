@@ -4,25 +4,25 @@ import { Feather } from "@expo/vector-icons";
 import Header from "../../../../Components/Header";
 import * as C from "../../../../styles/styles_adm";
 
-const Boates = ({ navigation }) => {
+const Atracoes = ({ navigation }) => {
   const [dados, setDados] = useState([
     {
       id: 1,
-      title: "P12",
-      img: require("../teste2.jpg"),
+      title: "Beto Carrero World",
+      img: require("../teste3.jpg"),
       avaliacao: 3.5,
     },
     {
       id: 2,
-      title: "Stage Music Park",
-      img: require("../teste2.jpg"),
+      title: "Água Show Park",
+      img: require("../teste3.jpg"),
       avaliacao: 4.5,
     },
     {
       id: 3,
-      title: "Lontra",
-      img: require("../teste2.jpg"),
-      avaliacao: 0.5,
+      title: "Barco Pirata",
+      img: require("../teste3.jpg"),
+      avaliacao: 4.0,
     },
     
   ]);
@@ -33,7 +33,7 @@ const Boates = ({ navigation }) => {
         <C.ButtonIcon onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={24} color="black" />
         </C.ButtonIcon>
-        <C.TitleBoat>Boates</C.TitleBoat>
+        <C.TitleAtracoes>Atrações</C.TitleAtracoes>
       </C.HeaderInfo>
 
       <C.MainView>
@@ -47,4 +47,4 @@ const Boates = ({ navigation }) => {
   );
 };
 
-export default Boates;
+export default Atracoes;
