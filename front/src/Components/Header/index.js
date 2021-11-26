@@ -7,7 +7,7 @@ const Header = ({ dados }) => {
   return (
     <C.Container>
       <C.ViewUser>
-        <C.TextUser>Olá {dados}!</C.TextUser>
+        <C.TextUser>{dados}</C.TextUser>
       </C.ViewUser>
       <C.ContainerHeader>
         <C.SubContainerHeader>

@@ -13,7 +13,7 @@ const Home = ({ navigation }) => {
   const { dadosUser } = DadosUsers();
   return (
     <SafeAreaView style={{backgroundColor: "#1e88e5"}}>
-      <Header dados={dadosUser.name} />
+      <Header dados={"Olá "+dadosUser.name+"!"} />
       <C.ContainerPai>
         <ScrollView >
           <C.ContainerButtons>
