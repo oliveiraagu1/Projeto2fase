@@ -59,10 +59,6 @@ export const InfoText = styled.Text`
 
 // Estilização dos sub-components da Home
 
-
-
-
-
 export const HeaderInfo = styled.View`
   flex-direction: row;
   margin: 20px;
