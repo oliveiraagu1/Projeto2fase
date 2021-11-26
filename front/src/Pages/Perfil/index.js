@@ -64,7 +64,6 @@ const Perfil = ({ navigation }) => {
       <Modalize ref={modalizeRefPassword} snapPoint={350} modalHeight={550}>
         <ModalPerfilPassword />
       </Modalize>
-      <StatusBar backgroundColor="#fff" barStyle="dark-content" />
       <C.ContainerHeader>
         <C.ButtonLeft onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={24} color="black" />
