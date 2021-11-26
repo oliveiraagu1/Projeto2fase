@@ -87,6 +87,12 @@ export const TitleAtracoes = styled.Text`
   margin-left: 45px;
 `;
 
+export const TitlePraias = styled.Text`
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 60px;
+`;
+
 export const MainView = styled.View`
   align-items: center;
   justify-content: center;
