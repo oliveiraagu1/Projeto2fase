@@ -52,7 +52,10 @@ const Cadastro = ({ navigation }) => {
         message: "Usuário cadastrado com sucesso!",
       });
     } catch (err) {
-      return console.log(err.message);
+      return setStatus({
+        type: "error",
+        message: "Erro: Usuário já cadastrado!",
+      });;
     }
   };
 
