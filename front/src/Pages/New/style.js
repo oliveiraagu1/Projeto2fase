@@ -36,7 +36,7 @@ export const InputMenor = styled.TextInput`
     width: 85%;
     height: 48px;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 `;
 
 export const InputDesc = styled.TextInput`
@@ -45,7 +45,7 @@ export const InputDesc = styled.TextInput`
     height: 108px;
     width: 85%;
     padding-left: 10px;
-    margin-bottom: 20px;
+   margin-bottom: 10px;
 `;
 
 export const ViewImage = styled.View`
@@ -77,4 +77,15 @@ export const TitleButton = styled.Text`
     font-size: 20px;
     color: #FFF;
     
+`;
+
+export const ViewStatus = styled.View``;
+
+export const TextSuccess = styled.Text`
+    color: green;
+    margin-top: 2px;
+`;
+
+export const TextDanger = styled.Text`
+    color: red;
 `;
