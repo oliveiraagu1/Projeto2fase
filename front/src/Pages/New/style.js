@@ -33,19 +33,19 @@ export const InfoTitle = styled.Text`
 export const InputMenor = styled.TextInput`
     border: 1px solid #1565C0;
     border-radius: 15px;
-    width: 85%;
+    width: 90%;
     height: 48px;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 `;
 
 export const InputDesc = styled.TextInput`
     border: 1px solid #1565C0;
     border-radius: 15px;
-    height: 108px;
-    width: 85%;
+    height: 80px;
+    width: 90%;
     padding-left: 10px;
-    margin-bottom: 20px;
+   margin-bottom: 10px;
 `;
 
 export const ViewImage = styled.View`
@@ -60,7 +60,7 @@ export const ButtonImage = styled.TouchableOpacity`
     border-radius: 15px;
     height: 48px;
     padding: 10px;
-    width: 340px;
+    width: 350px;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -77,4 +77,15 @@ export const TitleButton = styled.Text`
     font-size: 20px;
     color: #FFF;
     
+`;
+
+export const ViewStatus = styled.View``;
+
+export const TextSuccess = styled.Text`
+    color: green;
+    margin-top: 2px;
+`;
+
+export const TextDanger = styled.Text`
+    color: red;
 `;
