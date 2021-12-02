@@ -10,7 +10,7 @@ const Restaurantes = ({ navigation }) => {
       id: 1,
       title: "Restaurante do Quinha",
       img: require("../teste.jpg"),
-      avaliacao: 2.5,
+      avaliacao: 5.0,
     },
     {
       id: 2,
