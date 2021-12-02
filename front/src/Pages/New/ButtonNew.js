@@ -7,7 +7,7 @@ const ButtonNew = ({ size, focused }) => {
     <View
       style={[
         styles.container,
-        { backgroundColor: focused ? "#3eccf5" : "#6fdfff" },
+        { backgroundColor: focused ? "#0D47A1" : "#0D47A1" },
       ]}
     >
       <Entypo name="plus" color={focused ? "#FFF" : "#F8f8f8"} size={size} />
