@@ -16,10 +16,10 @@ const Home = ({ navigation }) => {
   const [teste, setTeste] = useState("");
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#1e88e5" }}>
+    <SafeAreaView style={{ backgroundColor: "#fff" }}>
       <Header dados={"Olá " + dadosUser.name + "!"} />
       <C.ViewInfo>
-        <C.Title>Selecione uma região!</C.Title>
+        <C.Title>Selecione uma região</C.Title>
         <C.SelectFlat />
         <Picker
           style={styled.pikcer}
@@ -81,10 +81,13 @@ const Home = ({ navigation }) => {
 
 const styled = StyleSheet.create({
   pikcer: {
-    width: 200, 
+    width: 347, 
     height: 30, 
-    backgroundColor: 'white',
+    backgroundColor: '#E3F2FD',
     marginTop: 5,
+    marginBottom: 20,
+    color: '#1976D2',
+    fontSize: 16
   }
 })
 
