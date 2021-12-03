@@ -19,6 +19,7 @@ const NewInfos = () => {
   const [select, setSelect] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [avaliacao, setAvaliacao] = useState("");
   const [teste, setTeste] = useState("");
 
   const [status, setStatus] = useState({
@@ -40,10 +41,20 @@ const NewInfos = () => {
       description: Yup.string()
         .required("Erro: É necessário preencher o campo descrição!")
         .max(200, "Erro: Descrição só pode ter no máximo 200 caracteres!"),
+      avaliacao: Yup.string()
+      .required("Erro: É necessário preenhcer o campo Avaliação!")
     });
 
+    if(avaliacao < 0 || avaliacao > 5){
+
+      return setStatus({
+        type:"error",
+        message: "O número da avaliação deve ser entre 0 - 5"
+      })
+    }
+
     try {
-      return await schema.validate({ name, description });
+      return await schema.validate({ name, description, avaliacao});
     } catch (error) {
       return setStatus({
         type: "error",
@@ -55,7 +66,7 @@ const NewInfos = () => {
   const Enviar = async () => {
     if (!(await ValidaCampos())) return;
 
-    let url = `http://192.168.0.14:8081/upload-image/${select}/${name}/${description}`;
+    let url = `http://192.168.0.14:8081/upload-image/${select}/${name}/${description}/${avaliacao}`;
     
     let params = teste;
 
@@ -178,6 +189,16 @@ const NewInfos = () => {
                 <Feather name="paperclip" size={24} color="black" />
               </C.ButtonImage>
             </C.ViewImage>
+
+
+            <C.Avaliacao>
+              <C.InfoTitle>Avaliação:</C.InfoTitle>
+              <C.InputAvaliacao
+                keyboardType="numeric"
+                onChangeText={text => setAvaliacao(text)}
+              />
+            </C.Avaliacao>
+
 
             <C.ViewStatus>
               <C.TextSuccess>

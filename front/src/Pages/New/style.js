@@ -15,10 +15,6 @@ export const Title = styled.Text`
     color: #1565C0;
 `;
 
-export const SubTitle = styled.Text`
-    font-size: 12px;
-`;
-
 export const Info = styled.View`
     align-items: center;
     justify-content: center;
@@ -27,7 +23,7 @@ export const Info = styled.View`
 
 export const InfoTitle = styled.Text`
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 2px;
 `;
 
 export const InputMenor = styled.TextInput`
@@ -88,4 +84,17 @@ export const TextSuccess = styled.Text`
 
 export const TextDanger = styled.Text`
     color: red;
+`;
+
+export const Avaliacao = styled.View`
+`;
+
+export const InputAvaliacao = styled.TextInput`
+
+    border: 1px solid #1565C0;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding-left: 15px;
+    width: 55px;
+    margin-left: 9px;
 `;
