@@ -12,7 +12,7 @@ const Atracoes = ({ navigation }) => {
 
   useEffect(() => {
     const verificaRest = async () => {
-      const rest = 1;
+      const rest = 3;
       try {
         const result = await api.get(`getItens/${rest}`);
 
@@ -22,7 +22,7 @@ const Atracoes = ({ navigation }) => {
           id: item.id,
           title: item.nome_local,
           avaliacao: item.avaliacao,
-          img: require("../teste.jpg"),
+          img: require("../teste3.jpg"),
         }));
 
         setDados(resposta);

@@ -12,7 +12,7 @@ const Praias = ({ navigation }) => {
 
   useEffect(() => {
     const verificaRest = async () => {
-      const rest = 1;
+      const rest = 4;
       try {
         const result = await api.get(`getItens/${rest}`);
 
