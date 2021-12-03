@@ -25,7 +25,7 @@ export default function TabRoutes() {
       }}
     >
       <Tab.Screen
-        name="Home1"
+        name="Tela principal"
         component={Home}
         options={{
           tabBarIcon: ({ size, color }) => (

@@ -25,15 +25,15 @@ const Stack = createNativeStackNavigator();
 const StackRoutes = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="Inicio"
         component={Inicio}
         options={{
           headerShown: false,
         }}
-      />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Cadastro" component={Cadastro} />
+      /> */}
+      {/* <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Cadastro" component={Cadastro} /> */}
       <Stack.Screen
         name="Home"
         component={TabRoutes}

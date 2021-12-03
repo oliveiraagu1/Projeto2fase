@@ -2,11 +2,12 @@ import styled from "styled-components/native";
  
 
 export const Title = styled.Text`
-  font-size: 25px;
+  font-size: 27px;
   font-weight: bold;
+  color: #1E1E1E;
   justify-content: center;
   align-items: center;
-  
+  margin: 30px 0 17px 0;
 `;
 
 export const ContainerPai = styled.View`
