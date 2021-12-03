@@ -1,31 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FlatListRest from "../flatListRest";
 import { Feather } from "@expo/vector-icons";
 import Header from "../../../../Components/Header";
+import api from "../../../../Services/Api/api";
 import * as C from "../../../../styles/styles_adm";
 
 const Boates = ({ navigation }) => {
-  const [dados, setDados] = useState([
-    {
-      id: 1,
-      title: "P12",
-      img: require("../teste2.jpg"),
-      avaliacao: 3.5,
-    },
-    {
-      id: 2,
-      title: "Stage Music Park",
-      img: require("../teste2.jpg"),
-      avaliacao: 4.5,
-    },
-    {
-      id: 3,
-      title: "Lontra",
-      img: require("../teste2.jpg"),
-      avaliacao: 0.5,
-    },
-    
-  ]);
+  const [dados, setDados] = useState([{}]);
+  const [dadosApi, setDadosApi] = useState([{}]);
+  const [atualiza, setAtualiza] = useState(true)
+
+  useEffect(() => {
+    const verificaBoate = async () => {
+      const rest = 2;
+      try {
+        const result = await api.get(`getItens/${rest}`);
+
+        setDadosApi(result.data);
+
+        const resposta = dadosApi.map((item) => ({
+          id: item.id,
+          title: item.nome_local,
+          avaliacao: item.avaliacao,
+          img: require("../teste2.jpg"),
+        }));
+
+        setDados(resposta);
+        setAtualiza(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    verificaBoate();
+  }, [atualiza]);
   return (
     <>
       <Header/>
