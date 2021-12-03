@@ -13,10 +13,11 @@ routes.patch("/editar/:id", CadastroController.editName);
 routes.patch("/editarPass/:id", CadastroController.editPassword);
 
 routes.post(
-  "/upload-image/:id/:nome/:descricao",
+  "/upload-image/:id/:nome/:descricao/:avaliacao",
   uploadImage.single("image"),
   LugaresController.uploadImage
 );
+routes.get("/getItens/:id", LugaresController.getItens);
 
 
 export default routes;

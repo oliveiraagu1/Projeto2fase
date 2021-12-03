@@ -10,20 +10,24 @@ const Lugares = db.define("lugares", {
   },
   tipo_id: {
     type: Sequelize.INTEGER,
-    allowNull: true,
+    allowNull: false,
   },
   nome_local:{
     type: Sequelize.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   descricao: {
     type: Sequelize.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   image: {
     type: Sequelize.STRING,
-    allowNull: true
+    allowNull: false
   },
+  avaliacao: {
+    type: Sequelize.FLOAT(0,5),
+    allowNull: false
+  }
 });
 
 //Lugares.sync({ alter: true });
