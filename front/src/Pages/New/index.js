@@ -27,14 +27,6 @@ const NewInfos = () => {
     message: "",
   });
 
-
-
-
-  
-
-
-
-
   const ValidaCampos = async () => {
     if (select == 0)
       return setStatus({
@@ -49,20 +41,20 @@ const NewInfos = () => {
       description: Yup.string()
         .required("Erro: É necessário preencher o campo descrição!")
         .max(200, "Erro: Descrição só pode ter no máximo 200 caracteres!"),
-      avaliacao: Yup.string()
-      .required("Erro: É necessário preenhcer o campo Avaliação!")
+      avaliacao: Yup.string().required(
+        "Erro: É necessário preenhcer o campo Avaliação!"
+      ),
     });
 
-    if(avaliacao < 0 || avaliacao > 5){
-
+    if (avaliacao < 0 || avaliacao > 5) {
       return setStatus({
-        type:"error",
-        message: "O número da avaliação deve ser entre 0 - 5"
-      })
+        type: "error",
+        message: "O número da avaliação deve ser entre 0 - 5",
+      });
     }
 
     try {
-      return await schema.validate({ name, description, avaliacao});
+      return await schema.validate({ name, description, avaliacao });
     } catch (error) {
       return setStatus({
         type: "error",
@@ -75,22 +67,21 @@ const NewInfos = () => {
     if (!(await ValidaCampos())) return;
 
     let url = `http://192.168.0.14:8081/upload-image/${select}/${name}/${description}/${avaliacao}`;
-    
+
     let params = teste;
 
     let headers = {
       "Content-Type": `multipart/form-data`,
       Accept: "application/json",
     };
-    
+
     let object = {
       method: "POST",
       headers: headers,
       body: params,
     };
-    
+
     try {
-  
       fetch(url, object)
         .then((resp) => {
           let json = null;
@@ -134,17 +125,13 @@ const NewInfos = () => {
           allowsEditing: true,
         });
 
-    
         if (!result.cancelled) {
-
-
           const newUpload = new FormData();
-            
+
           newUpload.append("image", {
             name: "Image.jpg",
             type: "image/jpg",
             uri: result.uri,
-
           });
           setTeste(newUpload);
 
@@ -174,7 +161,7 @@ const NewInfos = () => {
               selectedValue={select}
               onValueChange={(number) => Number(setSelect(number))}
             >
-              <Picker.Item key={0} value={0} label={"Selecione"} /> 
+              <Picker.Item key={0} value={0} label={"Selecione"} />
               <Picker.Item key={1} value={1} label={"Restaurantes"} />
               <Picker.Item key={2} value={2} label={"Boates"} />
               <Picker.Item key={3} value={3} label={"Atrações"} />
@@ -202,15 +189,13 @@ const NewInfos = () => {
               </C.ButtonImage>
             </C.ViewImage>
 
-
             <C.Avaliacao>
               <C.InfoTitle>Avaliação:</C.InfoTitle>
               <C.InputAvaliacao
                 keyboardType="numeric"
-                onChangeText={text => setAvaliacao(text)}
+                onChangeText={(text) => setAvaliacao(text)}
               />
             </C.Avaliacao>
-
 
             <C.ViewStatus>
               <C.TextSuccess>

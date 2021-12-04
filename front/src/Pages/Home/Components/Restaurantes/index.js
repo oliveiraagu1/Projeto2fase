@@ -11,7 +11,7 @@ const Restaurantes = ({ navigation }) => {
   const [dadosApi, setDadosApi] = useState([{}]);
   const [atualiza, setAtualiza] = useState(true);
 
-  const { url ,setUrl } = DadosUsers();
+  const { setUrl } = DadosUsers();
 
   useEffect(() => {  
     const verificaRest = async () => {

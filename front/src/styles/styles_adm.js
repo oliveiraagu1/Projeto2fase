@@ -102,7 +102,9 @@ export const Main = styled.FlatList``;
 
 export const ScrollFlat = styled.ScrollView``;
 
-export const ViewFlat = styled.View``;
+export const ViewFlat = styled.View`
+
+`;
 
 export const ButtonFlat = styled.TouchableOpacity`
   border-width: 1px;
