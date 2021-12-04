@@ -111,6 +111,8 @@ export const ButtonFlat = styled.TouchableOpacity`
 
 export const ImgFlat = styled.Image`
   border-radius: 15px;
+  width: 300px;
+  height: 200px;
 `;
 
 export const ViewInfoFlat = styled.View`

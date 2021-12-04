@@ -8,13 +8,17 @@ const ContextProvider = ({ children }) => {
     name: "",
     id: ""
   });
+
+  const [url, setUrl] = useState("");
   
 
   return (
     <ContextUsuario.Provider
       value={{
         dadosUser,
-        setDadosUser
+        setDadosUser,
+        url,
+        setUrl
       }}
     >
       {children}
@@ -24,8 +28,8 @@ const ContextProvider = ({ children }) => {
 
 export const DadosUsers = () => {
   const context = useContext(ContextUsuario);
-  const { dadosUser, setDadosUser } = context;
-  return { dadosUser, setDadosUser };
+  const { dadosUser, setDadosUser, url, setUrl } = context;
+  return { dadosUser, setDadosUser, url, setUrl };
 };
 
 export default ContextProvider;

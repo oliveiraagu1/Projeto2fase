@@ -27,6 +27,14 @@ const NewInfos = () => {
     message: "",
   });
 
+
+
+
+  
+
+
+
+
   const ValidaCampos = async () => {
     if (select == 0)
       return setStatus({
@@ -126,11 +134,15 @@ const NewInfos = () => {
           allowsEditing: true,
         });
 
+    
         if (!result.cancelled) {
+
+
           const newUpload = new FormData();
+            
           newUpload.append("image", {
-            name: "postagemImage.jpeg",
-            type: "image/jpeg",
+            name: "Image.jpg",
+            type: "image/jpg",
             uri: result.uri,
 
           });
@@ -162,7 +174,7 @@ const NewInfos = () => {
               selectedValue={select}
               onValueChange={(number) => Number(setSelect(number))}
             >
-              <Picker.Item key={0} value={0} label={"Selecione"} />
+              <Picker.Item key={0} value={0} label={"Selecione"} /> 
               <Picker.Item key={1} value={1} label={"Restaurantes"} />
               <Picker.Item key={2} value={2} label={"Boates"} />
               <Picker.Item key={3} value={3} label={"Atrações"} />

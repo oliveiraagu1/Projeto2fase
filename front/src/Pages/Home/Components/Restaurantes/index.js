@@ -2,29 +2,34 @@ import React, { useEffect, useState } from "react";
 import FlatListRest from "../flatListRest";
 import { Feather } from "@expo/vector-icons";
 import Header from "../../../../Components/Header";
+import { DadosUsers } from "../../../../Context/Contex";
 import api from "../../../../Services/Api/api";
 import * as C from "../../../../styles/styles_adm";
 
 const Restaurantes = ({ navigation }) => {
   const [dados, setDados] = useState([{}]);
   const [dadosApi, setDadosApi] = useState([{}]);
-  const [atualiza, setAtualiza] = useState(true)
+  const [atualiza, setAtualiza] = useState(true);
 
-  useEffect(() => {
+  const { url ,setUrl } = DadosUsers();
+
+  useEffect(() => {  
     const verificaRest = async () => {
       const rest = 1;
       try {
         const result = await api.get(`getItens/${rest}`);
 
-        setDadosApi(result.data);
+        setDadosApi(result.data.dados);
+        setUrl(result.data.url);
+
 
         const resposta = dadosApi.map((item) => ({
           id: item.id,
           title: item.nome_local,
           avaliacao: item.avaliacao,
-          img: require("../teste.jpg"),
+          img: item.image,
         }));
-
+        
         setDados(resposta);
         setAtualiza(false);
       } catch (err) {

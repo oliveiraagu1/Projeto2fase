@@ -1,15 +1,19 @@
 import React from "react";
+
 import * as C from "../../../styles/styles_adm";
 import { Ionicons } from "@expo/vector-icons";
 import Stars from "react-native-stars";
+import { DadosUsers } from "../../../Context/Contex";
 
 const FlatListRest = ({ data }) => {
+  const { url } = DadosUsers();
+  
   return (
     <>
       <C.ScrollFlat>
         <C.ViewFlat>
           <C.ButtonFlat activeOpacity={0.7}>
-            <C.ImgFlat source={data.img} />
+            <C.ImgFlat source={{uri:url + data.img}} />
           </C.ButtonFlat>
         </C.ViewFlat>
         <C.ViewInfoFlat>
