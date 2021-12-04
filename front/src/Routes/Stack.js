@@ -8,7 +8,7 @@ import Cadastro from "../Pages/Cadastro";
 
 import Restaurantes from "../Pages/Home/Components/Restaurantes";
 import Boates from "../Pages/Home/Components/Boates";
-import Atracoes from '../Pages/Home/Components/Atracoes';
+import Atracoes from "../Pages/Home/Components/Atracoes";
 import Praias from "../Pages/Home/Components/Praias";
 
 import PontosHistoricos from "../Pages/pontosHistoricos/HomePontos";
@@ -25,15 +25,15 @@ const Stack = createNativeStackNavigator();
 const StackRoutes = () => {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
+      <Stack.Screen
         name="Inicio"
         component={Inicio}
         options={{
           headerShown: false,
         }}
-      /> */}
-      {/* <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Cadastro" component={Cadastro} /> */}
+      />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Cadastro" component={Cadastro} />
       <Stack.Screen
         name="Home"
         component={TabRoutes}
@@ -72,7 +72,7 @@ const StackRoutes = () => {
           headerShown: false,
         }}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="Praias"
         component={Praias}
         options={{
