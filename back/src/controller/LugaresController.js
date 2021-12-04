@@ -4,14 +4,10 @@ import * as Yup from "yup";
 
 export default {
   async uploadImage(req, res) {
-    // const local  = req.file.path;
-    // const { id, nome, descricao } = req.params;
+  
 
-    const local = req.file.path;
+    const local = req.file.filename;
     const {id, nome, descricao, avaliacao} = req.params;
-
-    console.log(local);
-    console.log(nome);
 
     try {
       const user = await Lugares.create({
@@ -40,9 +36,6 @@ export default {
   async getItens(req, res){
 
     const {id} = req.params;
-    
-    console.log(id);
-
   
     try{
 
@@ -58,7 +51,11 @@ export default {
         mensagem: "Não existem registros cadastrados ainda!",
       });
 
-      return res.status(200).json(usuario)
+      return res.status(200).json({
+        error: false,
+        dados: usuario,
+        url: "http://192.168.0.14:8081/files/users/"
+      });
 
     }catch(err){
       return res.status(400).json({
