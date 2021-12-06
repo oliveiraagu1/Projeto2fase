@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { KeyboardAvoidingView, ScrollView } from "react-native";
+import React, { useState, useEffect } from "react";
 import api from "../../Services/Api/api";
 import * as G from "../../styles/styles_adm";
 import * as C from "./style";
@@ -17,6 +16,7 @@ const Login = ({ navigation }) => {
 
   const { setDadosUser } = DadosUsers();
 
+  
   const ValidaLogin = async () => {
     const schema = Yup.object().shape({
       email: Yup.string()
@@ -49,6 +49,7 @@ const Login = ({ navigation }) => {
         id: result.data.login.id,
       });
       alert(result.data.mensagem);
+      
       return navigation.navigate("Home");
     } catch (err) {
       return setStatus({
@@ -57,6 +58,8 @@ const Login = ({ navigation }) => {
       });
     }
   };
+
+  
 
   return (
     <C.Container>
