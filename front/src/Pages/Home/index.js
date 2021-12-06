@@ -25,7 +25,7 @@ const Home = ({ navigation }) => {
     }
   };
 
-  console.log(regiao);
+  
 
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>

@@ -62,7 +62,7 @@ export const ButtonImage = styled.TouchableOpacity`
 export const Button = styled.TouchableOpacity`
     background-color: #1565C0;
     width: 85%;
-    margin-top: 30px;
+    margin-top: 10px;
     align-items: center;
     justify-content: center;
     border-radius: 15px;
@@ -84,6 +84,7 @@ export const TextSuccess = styled.Text`
 
 export const TextDanger = styled.Text`
     color: red;
+
 `;
 
 export const Avaliacao = styled.View`

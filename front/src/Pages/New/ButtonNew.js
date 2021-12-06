@@ -17,13 +17,13 @@ const ButtonNew = ({ size, focused }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     borderRadius: 30,
     backgroundColor: "#3eccf5",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 20,
+    marginBottom: -10,
   },
 });
 

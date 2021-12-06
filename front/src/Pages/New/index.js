@@ -8,15 +8,15 @@ import {
 import Header from "../../Components/Header";
 import { Feather } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
-
+import { DadosUsers } from "../../Context/Contex";
 import * as ImagePicker from "expo-image-picker";
 
 import * as Yup from "yup";
 import * as C from "./style";
 
-
 const NewInfos = () => {
   const [select, setSelect] = useState("");
+  const [regiao, setRegiao] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [avaliacao, setAvaliacao] = useState("");
@@ -28,12 +28,19 @@ const NewInfos = () => {
   });
 
   const ValidaCampos = async () => {
-    if (select == 0)
+    if (select == 0){
       return setStatus({
         type: "error",
         message: "Erro: É necessário escolher uma categoria!",
       });
-
+    };
+    if(regiao == 0) {
+      return setStatus({
+        type: "error",
+        message: "Erro: É necessário escolher uma região!",
+      });
+    }
+      
     const schema = Yup.object().shape({
       name: Yup.string()
         .required("Erro: É necessário preencher o campo Nome do Local!")
@@ -66,7 +73,7 @@ const NewInfos = () => {
   const Enviar = async () => {
     if (!(await ValidaCampos())) return;
 
-    let url = `http://192.168.0.14:8081/upload-image/${select}/${name}/${description}/${avaliacao}`;
+    let url = `http://192.168.0.14:8081/upload-image/${select}/${name}/${description}/${avaliacao}/${regiao}`;
 
     let params = teste;
 
@@ -135,7 +142,6 @@ const NewInfos = () => {
           });
           setTeste(newUpload);
 
-          // const resposta = await apiPost(newUpload);
           alert("Imagem carregada com sucesso!");
         } else {
           alert("Cancelou imagem");
@@ -147,6 +153,8 @@ const NewInfos = () => {
   };
 
   return (
+    <KeyboardAvoidingView>
+      <ScrollView>
     <C.Container>
       <KeyboardAvoidingView
         behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -167,6 +175,16 @@ const NewInfos = () => {
               <Picker.Item key={3} value={3} label={"Atrações"} />
               <Picker.Item key={4} value={4} label={"Praias"} />
               <Picker.Item key={5} value={5} label={"Pontos Históricos"} />
+            </Picker>
+            <Picker
+              style={styled.pikcer}
+              selectedValue={regiao}
+              onValueChange={(number) => Number(setRegiao(number))}
+            >
+              <Picker.Item key={10} value={0} label={"Selecione"} />
+              <Picker.Item key={20} value={1} label={"Norte da Ilha"} />
+              <Picker.Item key={30} value={2} label={"Centro"} />
+              <Picker.Item key={40} value={3} label={"Sul da Ilha"} />
             </Picker>
           </C.SubHeader>
           <C.Info>
@@ -213,19 +231,21 @@ const NewInfos = () => {
         </ScrollView>
       </KeyboardAvoidingView>
     </C.Container>
+    </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
 const styled = StyleSheet.create({
   pikcer: {
-    width: 347, 
-    height: 30, 
-    backgroundColor: '#E3F2FD',
+    width: 347,
+    height: 30,
+    backgroundColor: "#E3F2FD",
     marginTop: 5,
     marginBottom: 20,
-    color: '#1976D2',
-    fontSize: 16
-  }
+    color: "#1976D2",
+    fontSize: 16,
+  },
 });
 
 export default NewInfos;
