@@ -13,7 +13,7 @@ const Restaurantes = ({ navigation }) => {
 
   const { setUrl } = DadosUsers();
 
-  useEffect(() => {  
+  useEffect(() => {
     const verificaRest = async () => {
       const rest = 1;
       try {
@@ -22,14 +22,13 @@ const Restaurantes = ({ navigation }) => {
         setDadosApi(result.data.dados);
         setUrl(result.data.url);
 
-
         const resposta = dadosApi.map((item) => ({
           id: item.id,
           title: item.nome_local,
           avaliacao: item.avaliacao,
           img: item.image,
         }));
-        
+
         setDados(resposta);
         setAtualiza(false);
       } catch (err) {

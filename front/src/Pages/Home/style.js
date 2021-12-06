@@ -7,7 +7,7 @@ export const Title = styled.Text`
   color: #1E1E1E;
   justify-content: center;
   align-items: center;
-  margin: 30px 0 17px 0;
+  margin: 10px 0 5px 0;
 `;
 
 export const ContainerPai = styled.View`

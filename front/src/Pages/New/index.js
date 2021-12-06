@@ -8,12 +8,12 @@ import {
 import Header from "../../Components/Header";
 import { Feather } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
-import { DadosUsers } from "../../Context/Contex";
+
 import * as ImagePicker from "expo-image-picker";
 
 import * as Yup from "yup";
 import * as C from "./style";
-import api from "../../Services/Api/api";
+
 
 const NewInfos = () => {
   const [select, setSelect] = useState("");

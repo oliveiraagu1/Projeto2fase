@@ -8,6 +8,7 @@ import PontosHistoricos from "../../Assets/categorias/pontoshistoricos.svg";
 import Header from "../../Components/Header";
 import { DadosUsers } from "../../Context/Contex";
 import { Picker } from "@react-native-picker/picker";
+ 
 import * as C from "./style";
 
 const Home = ({ navigation }) => {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatusBar } from "react-native";
+import { KeyboardAvoidingView, ScrollView } from "react-native";
 import api from "../../Services/Api/api";
 import * as G from "../../styles/styles_adm";
 import * as C from "./style";
@@ -46,7 +46,7 @@ const Login = ({ navigation }) => {
       setDadosUser({
         email: result.data.login.email,
         name: result.data.login.name,
-        id: result.data.login.id
+        id: result.data.login.id,
       });
       alert(result.data.mensagem);
       return navigation.navigate("Home");
@@ -60,9 +60,7 @@ const Login = ({ navigation }) => {
 
   return (
     <C.Container>
-
       <C.ImageTop source={require("../../Assets/Login/imageTop.png")} />
-
       <C.Login>
         <C.Title>ENTRAR</C.Title>
         <G.Texto>Email</G.Texto>
@@ -79,20 +77,20 @@ const Login = ({ navigation }) => {
           autoCorrect={false}
           onChangeText={(text) => setPassword(text)}
         />
+
         <C.Status>
           <C.StatusTextDanger>
             {status.type === "error" ? status.message : ""}
           </C.StatusTextDanger>
         </C.Status>
-        <C.EsqueciSenha>
-          <C.Text>Esqueci minha senha</C.Text>
-        </C.EsqueciSenha>
+
         <G.Button onPress={Logar}>
           <G.TextButton>ENTRAR</G.TextButton>
         </G.Button>
 
         <C.ImageBot source={require("../../Assets/Login/imageBot.png")} />
       </C.Login>
+
     </C.Container>
   );
 };
