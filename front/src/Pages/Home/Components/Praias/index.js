@@ -34,6 +34,7 @@ const Praias = ({ navigation }) => {
         setAtualiza(false);
       } catch (err) {
         console.log(err);
+        alert("Não existe nenhuma praia cadastrada nessa região!");
       }
     };
     verificaRest();

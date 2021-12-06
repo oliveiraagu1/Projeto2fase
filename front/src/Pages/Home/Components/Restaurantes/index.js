@@ -35,6 +35,7 @@ const Restaurantes = ({ navigation }) => {
         setAtualiza(false);
       } catch (err) {
         console.log(err);
+        alert("Não existe nenhum restaurante cadastrado nessa região!");
       }
     };
     verificaRest();

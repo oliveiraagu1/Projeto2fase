@@ -34,6 +34,7 @@ const Atracoes = ({ navigation }) => {
         setAtualiza(false);
       } catch (err) {
         console.log(err);
+        alert("Não existe nenhuma atração cadastrada nessa região!");
       }
     };
     verificaRest();

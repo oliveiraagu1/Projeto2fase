@@ -34,6 +34,7 @@ const Boates = ({ navigation }) => {
         setAtualiza(false);
       } catch (err) {
         console.log(err);
+        alert("Não existe nenhuma boate cadastrada nessa região!");
       }
     };
     verificaRest();
