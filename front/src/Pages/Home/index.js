@@ -12,7 +12,7 @@ import { Picker } from "@react-native-picker/picker";
 import * as C from "./style";
 
 const Home = ({ navigation }) => {
-  const { dadosUser, regiao, setRegiao } = DadosUsers();
+  const { dadosUser, setRegiao } = DadosUsers();
 
   const [select, setSelect] = useState("");
 
@@ -24,6 +24,34 @@ const Home = ({ navigation }) => {
       navigation.navigate("Restaurantes");
     }
   };
+  
+  const Boat = () => {
+    if (select == 0) {
+      return alert("É necessário escolher alguma região!");
+    } else {
+      setRegiao(select);
+      navigation.navigate("Boates");
+    }
+  };
+
+  const Atrac = () => {
+    if (select == 0) {
+      return alert("É necessário escolher alguma região!");
+    } else {
+      setRegiao(select);
+      navigation.navigate("Atracoes");
+    }
+  };
+
+  const Praia = () => {
+    if (select == 0) {
+      return alert("É necessário escolher alguma região!");
+    } else {
+      setRegiao(select);
+      navigation.navigate("Praias");
+    }
+  };
+  
 
   
 
@@ -52,7 +80,7 @@ const Home = ({ navigation }) => {
               <C.ButtonText>RESTAURANTES</C.ButtonText>
             </C.ButtonsCategorias>
 
-            <C.ButtonsCategorias onPress={() => navigation.navigate("Boates")}>
+            <C.ButtonsCategorias onPress={Boat}>
               <Boates width={60} height={60} paddingVertical={38} />
               <C.ButtonText>BOATES</C.ButtonText>
             </C.ButtonsCategorias>
@@ -60,13 +88,13 @@ const Home = ({ navigation }) => {
 
           <C.ContainerButtons>
             <C.ButtonsCategorias
-              onPress={() => navigation.navigate("Atracoes")}
+              onPress={Atrac}
             >
               <Atracoes width={50} height={50} paddingVertical={38} />
               <C.ButtonText>ATRAÇOES</C.ButtonText>
             </C.ButtonsCategorias>
 
-            <C.ButtonsCategorias onPress={() => navigation.navigate("Praias")}>
+            <C.ButtonsCategorias onPress={Praia}>
               <Praias width={50} height={43} paddingVertical={38} />
               <C.ButtonText>PRAIAS</C.ButtonText>
             </C.ButtonsCategorias>

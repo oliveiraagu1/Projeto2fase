@@ -11,13 +11,13 @@ const Atracoes = ({ navigation }) => {
   const [dadosApi, setDadosApi] = useState([{}]);
   const [atualiza, setAtualiza] = useState(true);
 
-  const { url ,setUrl } = DadosUsers();
+  const { setUrl, regiao } = DadosUsers();
 
   useEffect(() => {  
     const verificaRest = async () => {
       const rest = 3;
       try {
-        const result = await api.get(`getItens/${rest}`);
+        const result = await api.get(`getItens/${rest}/${regiao}`);
 
         setDadosApi(result.data.dados);
         setUrl(result.data.url);
