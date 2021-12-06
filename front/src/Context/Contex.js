@@ -8,8 +8,9 @@ const ContextProvider = ({ children }) => {
     name: "",
     id: ""
   });
-
+  
   const [url, setUrl] = useState("");
+  const [regiao, setRegiao] = useState("");
   
 
   return (
@@ -18,7 +19,9 @@ const ContextProvider = ({ children }) => {
         dadosUser,
         setDadosUser,
         url,
-        setUrl
+        setUrl,
+        regiao,
+        setRegiao,
       }}
     >
       {children}
@@ -28,8 +31,8 @@ const ContextProvider = ({ children }) => {
 
 export const DadosUsers = () => {
   const context = useContext(ContextUsuario);
-  const { dadosUser, setDadosUser, url, setUrl } = context;
-  return { dadosUser, setDadosUser, url, setUrl };
+  const { dadosUser, setDadosUser, url, setUrl, regiao, setRegiao } = context;
+  return { dadosUser, setDadosUser, url, setUrl, regiao, setRegiao };
 };
 
 export default ContextProvider;

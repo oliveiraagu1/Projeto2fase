@@ -8,13 +8,24 @@ import PontosHistoricos from "../../Assets/categorias/pontoshistoricos.svg";
 import Header from "../../Components/Header";
 import { DadosUsers } from "../../Context/Contex";
 import { Picker } from "@react-native-picker/picker";
- 
+
 import * as C from "./style";
 
 const Home = ({ navigation }) => {
-  const { dadosUser } = DadosUsers();
+  const { dadosUser, regiao, setRegiao } = DadosUsers();
 
-  const [teste, setTeste] = useState("");
+  const [select, setSelect] = useState("");
+
+  const Rest = () => {
+    if (select == 0) {
+      return alert("É necessário escolher alguma região!");
+    } else {
+      setRegiao(select);
+      navigation.navigate("Restaurantes");
+    }
+  };
+
+  console.log(regiao);
 
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
@@ -24,27 +35,24 @@ const Home = ({ navigation }) => {
         <C.SelectFlat />
         <Picker
           style={styled.pikcer}
-          selectedValue={teste}
-          onValueChange={(text) => setTeste(text)}
+          selectedValue={select}
+          onValueChange={(number) => Number(setSelect(number))}
         >
-          <Picker.Item key={0}value={"Norte da ilha"}label={"Norte da ilha"}/>                
-          <Picker.Item key={1} value={"Centro"} label={"Centro"} />
-          <Picker.Item key={2} value={"Sul da ilha"} label={"Sul da ilha"} />
+          <Picker.Item key={0} value={1} label={"Selecione"} />
+          <Picker.Item key={0} value={1} label={"Norte da ilha"} />
+          <Picker.Item key={1} value={2} label={"Centro"} />
+          <Picker.Item key={2} value={3} label={"Sul da ilha"} />
         </Picker>
       </C.ViewInfo>
       <C.ContainerPai>
         <ScrollView>
           <C.ContainerButtons>
-            <C.ButtonsCategorias
-              onPress={() => navigation.navigate("Restaurantes")}
-            >
+            <C.ButtonsCategorias onPress={Rest}>
               <Restaurantes width={60} height={60} paddingVertical={38} />
               <C.ButtonText>RESTAURANTES</C.ButtonText>
             </C.ButtonsCategorias>
 
-            <C.ButtonsCategorias
-              onPress={() => navigation.navigate("Boates")}
-            >
+            <C.ButtonsCategorias onPress={() => navigation.navigate("Boates")}>
               <Boates width={60} height={60} paddingVertical={38} />
               <C.ButtonText>BOATES</C.ButtonText>
             </C.ButtonsCategorias>
@@ -52,15 +60,13 @@ const Home = ({ navigation }) => {
 
           <C.ContainerButtons>
             <C.ButtonsCategorias
-               onPress={() => navigation.navigate("Atracoes")}
+              onPress={() => navigation.navigate("Atracoes")}
             >
               <Atracoes width={50} height={50} paddingVertical={38} />
               <C.ButtonText>ATRAÇOES</C.ButtonText>
             </C.ButtonsCategorias>
 
-            <C.ButtonsCategorias
-              onPress={() => navigation.navigate("Praias")}
-            >
+            <C.ButtonsCategorias onPress={() => navigation.navigate("Praias")}>
               <Praias width={50} height={43} paddingVertical={38} />
               <C.ButtonText>PRAIAS</C.ButtonText>
             </C.ButtonsCategorias>
@@ -82,14 +88,14 @@ const Home = ({ navigation }) => {
 
 const styled = StyleSheet.create({
   pikcer: {
-    width: 347, 
-    height: 30, 
-    backgroundColor: '#E3F2FD',
+    width: 347,
+    height: 30,
+    backgroundColor: "#E3F2FD",
     marginTop: 5,
     marginBottom: 20,
-    color: '#1976D2',
-    fontSize: 16
-  }
-})
+    color: "#1976D2",
+    fontSize: 16,
+  },
+});
 
 export default Home;

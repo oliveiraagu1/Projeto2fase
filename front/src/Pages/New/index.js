@@ -218,11 +218,14 @@ const NewInfos = () => {
 
 const styled = StyleSheet.create({
   pikcer: {
-    width: 200,
-    height: 30,
-    backgroundColor: "white",
+    width: 347, 
+    height: 30, 
+    backgroundColor: '#E3F2FD',
     marginTop: 5,
-  },
+    marginBottom: 20,
+    color: '#1976D2',
+    fontSize: 16
+  }
 });
 
 export default NewInfos;

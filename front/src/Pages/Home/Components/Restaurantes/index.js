@@ -6,12 +6,14 @@ import { DadosUsers } from "../../../../Context/Contex";
 import api from "../../../../Services/Api/api";
 import * as C from "../../../../styles/styles_adm";
 
-const Restaurantes = ({ navigation }) => {
+const Restaurantes = ({ navigation, props }) => {
   const [dados, setDados] = useState([{}]);
   const [dadosApi, setDadosApi] = useState([{}]);
   const [atualiza, setAtualiza] = useState(true);
 
-  const { setUrl } = DadosUsers();
+  const { setUrl, regiao } = DadosUsers();
+
+
 
   useEffect(() => {
     const verificaRest = async () => {
