@@ -27,6 +27,10 @@ const Lugares = db.define("lugares", {
   avaliacao: {
     type: Sequelize.FLOAT(0,5),
     allowNull: false
+  },
+  localidade: {
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
 });
 

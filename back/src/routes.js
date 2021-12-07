@@ -13,11 +13,12 @@ routes.patch("/editar/:id", CadastroController.editName);
 routes.patch("/editarPass/:id", CadastroController.editPassword);
 
 routes.post(
-  "/upload-image/:id/:nome/:descricao/:avaliacao",
+  "/upload-image/:id/:nome/:descricao/:avaliacao/:regiao",
   uploadImage.single("image"),
   LugaresController.uploadImage
 );
-routes.get("/getItens/:id", LugaresController.getItens);
+routes.get("/getItens/:id/:localidade", LugaresController.getItens);
+routes.get("/getOneItem/:id", LugaresController.getOneItens);
 
 
 export default routes;
