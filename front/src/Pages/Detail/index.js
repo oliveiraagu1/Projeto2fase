@@ -30,7 +30,7 @@ const Detail = ({ route }) => {
       }
     };
     getOneItem();
-  }, [status]);
+  }, []);
 
   return (
     <C.ContainerPrincipal>
