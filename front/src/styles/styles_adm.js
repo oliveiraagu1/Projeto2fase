@@ -3,26 +3,35 @@ import styled from "styled-components/native";
 export const Button = styled.TouchableOpacity`
   margin-top: 50px;
   border-width: 1px;
-  border-color: green;
+  border-color: #fff;
   justify-content: center;
   align-items: center;
   padding: 12px;
   width: 120px;
   border-radius: 7px;
+  position: absolute;
+  bottom: 25px;
+  right: 40px;
+  z-index: 9999;
   margin-left: 210px;
 `;
 
+export const TextoEmail = styled.Text`
+  font-size: 13px;
+  color: #2F80ED;
+  margin: 25px 0 0px 12px;
+
+`;
 export const Texto = styled.Text`
   font-size: 13px;
-  color: #00a2ee;
-  margin: 5px;
-  margin-left: 10px;
-`;
+  color: #2F80ED;
+  margin: 20px 0 8px 12px;
 
+`;
 export const Input = styled.TextInput`
   border-width: 1px;
   border-radius: 7px;
-  border-color: #87cefa;
+  border-color: #2196F3;
   width: 85%;
   padding: 8px;
   margin-left: 10px;
@@ -31,6 +40,7 @@ export const Input = styled.TextInput`
 export const TextButton = styled.Text`
   font-weight: bold;
   font-size: 20px;
+  color: #fff;
 `;
 
 export const LogoImage = styled.Image`

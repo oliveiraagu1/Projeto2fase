@@ -66,7 +66,8 @@ const Login = ({ navigation }) => {
       <C.ImageTop source={require("../../Assets/Login/imageTop.png")} />
       <C.Login>
         <C.Title>ENTRAR</C.Title>
-        <G.Texto>Email</G.Texto>
+        <G.TextoEmail>Email</G.TextoEmail>
+        <C.ContainerInput>
         <G.Input
           onChangeText={(text) => setEmail(text)}
           autoCapitalize="none"
@@ -80,7 +81,7 @@ const Login = ({ navigation }) => {
           autoCorrect={false}
           onChangeText={(text) => setPassword(text)}
         />
-
+        </C.ContainerInput>
         <C.Status>
           <C.StatusTextDanger>
             {status.type === "error" ? status.message : ""}

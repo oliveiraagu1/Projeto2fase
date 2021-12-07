@@ -9,8 +9,8 @@ export const Scroll = styled.ScrollView``;
 
 export const Title = styled.Text`
     font-weight: bold;
-    font-size: 40px;
-    color: #2E9AFE;
+    font-size: 35px;
+    color: #1E88E5;
     margin-top: 20px;
     margin-bottom: 15px;
 `;
