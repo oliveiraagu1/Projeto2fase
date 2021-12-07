@@ -175,7 +175,6 @@ const NewInfos = () => {
               <Picker.Item key={2} value={2} label={"Boates"} />
               <Picker.Item key={3} value={3} label={"Atrações"} />
               <Picker.Item key={4} value={4} label={"Praias"} />
-              <Picker.Item key={5} value={5} label={"Pontos Históricos"} />
             </Picker>
             <Picker
               style={styled.pikcer}
