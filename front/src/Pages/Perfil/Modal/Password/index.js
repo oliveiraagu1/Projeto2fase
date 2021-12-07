@@ -88,9 +88,6 @@ const ModalPerfilPassword = () => {
           <C.ButtonEdit onPress={EditPassword}>
             <C.TextButton>Alterar</C.TextButton>
           </C.ButtonEdit>
-          <C.ButtonCancel>
-            <C.TextButton>Cancelar</C.TextButton>
-          </C.ButtonCancel>
         </C.ModalButton>
         <C.Status>
           <C.StatusSuccess>

@@ -40,13 +40,12 @@ const Detail = ({ route, navigation }) => {
         <C.ImagemDescription source={{ uri: dados.url + dados.image }} />
       </C.ContainerImage>
 
-
       <C.ContainerDescription>
         <C.ContainerTitleDescription>
           <C.TitleDescription>Descrição geral</C.TitleDescription>
         </C.ContainerTitleDescription>
         <G.ButtonIcon onPress={() => navigation.goBack()}>
-        <Feather name="chevron-left" size={30} color="black" />
+          <Feather name="chevron-left" size={30} color="black" />
         </G.ButtonIcon>
         <C.TitleInfo>{dados.title}</C.TitleInfo>
         <C.TextInfo>{dados.descricao}</C.TextInfo>

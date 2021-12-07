@@ -86,10 +86,6 @@ const Perfil = ({ navigation }) => {
           <C.TextButtons>Trocar Senha</C.TextButtons>
           <Feather name="chevron-right" size={24} color="black" />
         </C.Buttons>
-        <C.Buttons>
-          <C.TextButtons>Favoritos</C.TextButtons>
-          <Feather name="chevron-right" size={24} color="black" />
-        </C.Buttons>
         <C.Buttons onPress={Sair}>
           <C.TextButtons>Sair</C.TextButtons>
         </C.Buttons>

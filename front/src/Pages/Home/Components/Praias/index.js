@@ -13,7 +13,7 @@ const Praias = ({ navigation }) => {
 
   const { setUrl, regiao } = DadosUsers();
 
-  useEffect(() => {  
+  useEffect(() => {
     const verificaRest = async () => {
       const rest = 4;
       try {
@@ -22,14 +22,13 @@ const Praias = ({ navigation }) => {
         setDadosApi(result.data.dados);
         setUrl(result.data.url);
 
-
         const resposta = dadosApi.map((item) => ({
           id: item.id,
           title: item.nome_local,
           avaliacao: item.avaliacao,
           img: item.image,
         }));
-        
+
         setDados(resposta);
         setAtualiza(false);
       } catch (err) {
@@ -53,7 +52,9 @@ const Praias = ({ navigation }) => {
         <C.Main
           data={dados}
           keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => <FlatListRest data={item} nav={navigation} />}
+          renderItem={({ item }) => (
+            <FlatListRest data={item} nav={navigation} />
+          )}
         />
       </C.MainView>
     </>

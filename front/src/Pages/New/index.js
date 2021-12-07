@@ -27,20 +27,19 @@ const NewInfos = () => {
   });
 
   const ValidaCampos = async () => {
-    if (select == 0){
+    if (select == 0) {
       return setStatus({
         type: "error",
         message: "Erro: É necessário escolher uma categoria!",
       });
-
-    };
-    if(regiao == 0) {
+    }
+    if (regiao == 0) {
       return setStatus({
         type: "error",
         message: "Erro: É necessário escolher uma região!",
       });
     }
-      
+
     const schema = Yup.object().shape({
       name: Yup.string()
         .required("Erro: É necessário preencher o campo Nome do Local!")
@@ -153,85 +152,84 @@ const NewInfos = () => {
   };
 
   return (
-   
     <KeyboardAvoidingView>
       <ScrollView>
-    <C.Container>
-      <KeyboardAvoidingView
-        behavior={Platform.OS == "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={80}
-      >
-        <Header />
-        <ScrollView>
-          <C.SubHeader>
-            <C.Title>CADASTRANDO REGIÃO</C.Title>
-            <Picker
-              style={styled.pikcer}
-              selectedValue={select}
-              onValueChange={(number) => Number(setSelect(number))}
-            >
-              <Picker.Item key={0} value={0} label={"Selecione"} />
-              <Picker.Item key={1} value={1} label={"Restaurantes"} />
-              <Picker.Item key={2} value={2} label={"Boates"} />
-              <Picker.Item key={3} value={3} label={"Atrações"} />
-              <Picker.Item key={4} value={4} label={"Praias"} />
-            </Picker>
-            <Picker
-              style={styled.pikcer}
-              selectedValue={regiao}
-              onValueChange={(number) => Number(setRegiao(number))}
-            >
-              <Picker.Item key={10} value={0} label={"Selecione"} />
-              <Picker.Item key={20} value={1} label={"Norte da Ilha"} />
-              <Picker.Item key={30} value={2} label={"Centro"} />
-              <Picker.Item key={40} value={3} label={"Sul da Ilha"} />
-            </Picker>
-          </C.SubHeader>
-          <C.Info>
-            <C.InfoTitle>Nome do Local:</C.InfoTitle>
-            <C.InputMenor
-              maxLength={50}
-              onChangeText={(text) => setName(text)}
-            />
-            <C.InfoTitle>Descrição:</C.InfoTitle>
-            <C.InputDesc
-              multiline={true}
-              maxLength={200}
-              onChangeText={(text) => setDescription(text)}
-            />
+        <C.Container>
+          <KeyboardAvoidingView
+            behavior={Platform.OS == "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={80}
+          >
+            <Header />
+            <ScrollView>
+              <C.SubHeader>
+                <C.Title>CADASTRANDO REGIÃO</C.Title>
+                <Picker
+                  style={styled.pikcer}
+                  selectedValue={select}
+                  onValueChange={(number) => Number(setSelect(number))}
+                >
+                  <Picker.Item key={0} value={0} label={"Selecione"} />
+                  <Picker.Item key={1} value={1} label={"Restaurantes"} />
+                  <Picker.Item key={2} value={2} label={"Boates"} />
+                  <Picker.Item key={3} value={3} label={"Atrações"} />
+                  <Picker.Item key={4} value={4} label={"Praias"} />
+                </Picker>
+                <Picker
+                  style={styled.pikcer}
+                  selectedValue={regiao}
+                  onValueChange={(number) => Number(setRegiao(number))}
+                >
+                  <Picker.Item key={10} value={0} label={"Selecione"} />
+                  <Picker.Item key={20} value={1} label={"Norte da Ilha"} />
+                  <Picker.Item key={30} value={2} label={"Centro"} />
+                  <Picker.Item key={40} value={3} label={"Sul da Ilha"} />
+                </Picker>
+              </C.SubHeader>
+              <C.Info>
+                <C.InfoTitle>Nome do Local:</C.InfoTitle>
+                <C.InputMenor
+                  maxLength={50}
+                  onChangeText={(text) => setName(text)}
+                />
+                <C.InfoTitle>Descrição:</C.InfoTitle>
+                <C.InputDesc
+                  multiline={true}
+                  maxLength={200}
+                  onChangeText={(text) => setDescription(text)}
+                />
 
-            <C.ViewImage>
-              <C.InfoTitle>Imagem:</C.InfoTitle>
-              <C.ButtonImage onPress={chooseFromGallery}>
-                <Feather name="paperclip" size={24} color="black" />
-              </C.ButtonImage>
-            </C.ViewImage>
+                <C.ViewImage>
+                  <C.InfoTitle>Imagem:</C.InfoTitle>
+                  <C.ButtonImage onPress={chooseFromGallery}>
+                    <Feather name="paperclip" size={24} color="black" />
+                  </C.ButtonImage>
+                </C.ViewImage>
 
-            <C.Avaliacao>
-              <C.InfoTitle>Avaliação:</C.InfoTitle>
-              <C.InputAvaliacao
-                keyboardType="numeric"
-                onChangeText={(text) => setAvaliacao(text)}
-              />
-            </C.Avaliacao>
+                <C.Avaliacao>
+                  <C.InfoTitle>Avaliação:</C.InfoTitle>
+                  <C.InputAvaliacao
+                    keyboardType="numeric"
+                    onChangeText={(text) => setAvaliacao(text)}
+                  />
+                </C.Avaliacao>
 
-            <C.ViewStatus>
-              <C.TextSuccess>
-                {status.type === "success" ? status.message : ""}
-              </C.TextSuccess>
-              <C.TextDanger>
-                {status.type === "error" ? status.message : ""}
-              </C.TextDanger>
-            </C.ViewStatus>
+                <C.ViewStatus>
+                  <C.TextSuccess>
+                    {status.type === "success" ? status.message : ""}
+                  </C.TextSuccess>
+                  <C.TextDanger>
+                    {status.type === "error" ? status.message : ""}
+                  </C.TextDanger>
+                </C.ViewStatus>
 
-            <C.Button onPress={Enviar}>
-              <C.TitleButton>ENVIAR</C.TitleButton>
-            </C.Button>
-          </C.Info>
-        </ScrollView>
-      </KeyboardAvoidingView>
-    </C.Container>
-    </ScrollView>
+                <C.Button onPress={Enviar}>
+                  <C.TitleButton>ENVIAR</C.TitleButton>
+                </C.Button>
+              </C.Info>
+            </ScrollView>
+          </KeyboardAvoidingView>
+        </C.Container>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };

@@ -11,7 +11,6 @@ export const Container = styled.SafeAreaView`
 export const ModalView = styled.View`
   background-color: #ccc;
   padding: 40px;
-  
 `;
 
 export const Title = styled.Text`
@@ -41,13 +40,7 @@ export const ButtonEdit = styled.TouchableOpacity`
   padding: 20px;
   border-radius: 10px;
 `;
-export const ButtonCancel = styled.TouchableOpacity`
-  background-color: red;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-`;
+
 export const TextButton = styled.Text`
   color: #fff;
   font-size: 15px;

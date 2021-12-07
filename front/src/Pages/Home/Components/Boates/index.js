@@ -13,7 +13,7 @@ const Boates = ({ navigation }) => {
 
   const { setUrl, regiao } = DadosUsers();
 
-  useEffect(() => {  
+  useEffect(() => {
     const verificaRest = async () => {
       const rest = 2;
       try {
@@ -22,14 +22,13 @@ const Boates = ({ navigation }) => {
         setDadosApi(result.data.dados);
         setUrl(result.data.url);
 
-
         const resposta = dadosApi.map((item) => ({
           id: item.id,
           title: item.nome_local,
           avaliacao: item.avaliacao,
           img: item.image,
         }));
-        
+
         setDados(resposta);
         setAtualiza(false);
       } catch (err) {
@@ -41,7 +40,7 @@ const Boates = ({ navigation }) => {
   }, [atualiza]);
   return (
     <>
-      <Header/>
+      <Header />
       <C.HeaderInfo>
         <C.ButtonIcon onPress={() => navigation.goBack()}>
           <Feather name="chevron-left" size={24} color="black" />
@@ -53,7 +52,9 @@ const Boates = ({ navigation }) => {
         <C.Main
           data={dados}
           keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => <FlatListRest data={item} nav={navigation} />}
+          renderItem={({ item }) => (
+            <FlatListRest data={item} nav={navigation} />
+          )}
         />
       </C.MainView>
     </>

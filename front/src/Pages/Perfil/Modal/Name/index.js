@@ -8,7 +8,7 @@ const ModalPerfilName = () => {
   const [newName, setNewName] = useState("");
   const [status, setStatus] = useState({
     type: "",
-    message: ""
+    message: "",
   });
 
   const { dadosUser, setDadosUser } = DadosUsers();
@@ -26,7 +26,7 @@ const ModalPerfilName = () => {
     } catch (err) {
       return setStatus({
         type: "error",
-        message: err.message
+        message: err.message,
       });
     }
   };
@@ -37,7 +37,7 @@ const ModalPerfilName = () => {
       const id = dadosUser.id;
 
       const result = await api.patch(`editar/${id}`, {
-        name: newName
+        name: newName,
       });
 
       setDadosUser({
@@ -47,9 +47,8 @@ const ModalPerfilName = () => {
       });
       return setStatus({
         type: "success",
-        message: "O nome foi alterado com sucesso!"
+        message: "O nome foi alterado com sucesso!",
       });
-      
     } catch (err) {
       setStatus({
         type: "error",
@@ -77,9 +76,6 @@ const ModalPerfilName = () => {
           <C.ButtonEdit onPress={EditName}>
             <C.TextButton>Editar</C.TextButton>
           </C.ButtonEdit>
-          <C.ButtonCancel>
-            <C.TextButton>Cancelar</C.TextButton>
-          </C.ButtonCancel>
         </C.ModalButton>
         <C.Status>
           <C.StatusSuccess>
