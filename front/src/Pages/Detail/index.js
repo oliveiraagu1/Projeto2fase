@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import * as C from "./style";
+import { Feather } from "@expo/vector-icons";
 import api from "../../Services/Api/api";
+import * as C from "../../Pages/pontosHistoricos/styles";
+import * as G from "./style";
 
-const Detail = ({ route }) => {
+const Detail = ({ route, navigation }) => {
   const [status, setStatus] = useState(true);
   const [dados, setDados] = useState({
     url: "",
@@ -37,10 +39,15 @@ const Detail = ({ route }) => {
       <C.ContainerImage>
         <C.ImagemDescription source={{ uri: dados.url + dados.image }} />
       </C.ContainerImage>
+
+
       <C.ContainerDescription>
         <C.ContainerTitleDescription>
           <C.TitleDescription>Descrição geral</C.TitleDescription>
         </C.ContainerTitleDescription>
+        <G.ButtonIcon onPress={() => navigation.goBack()}>
+        <Feather name="chevron-left" size={30} color="black" />
+        </G.ButtonIcon>
         <C.TitleInfo>{dados.title}</C.TitleInfo>
         <C.TextInfo>{dados.descricao}</C.TextInfo>
       </C.ContainerDescription>

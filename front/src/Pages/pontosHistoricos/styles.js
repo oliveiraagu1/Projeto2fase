@@ -123,7 +123,6 @@ export const TitleInfo = styled.Text `
     margin-top: 150px;
     margin: 0 auto;
     text-align: center;
-    padding-top: 50px;
 `
 export const TextInfo = styled.Text `
     text-align: justify;
