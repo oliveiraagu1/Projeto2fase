@@ -53,7 +53,7 @@ const Boates = ({ navigation }) => {
         <C.Main
           data={dados}
           keyExtractor={(item) => String(item.id)}
-          renderItem={({ item }) => <FlatListRest data={item} />}
+          renderItem={({ item }) => <FlatListRest data={item} nav={navigation} />}
         />
       </C.MainView>
     </>
