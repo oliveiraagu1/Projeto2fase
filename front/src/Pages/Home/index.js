@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { ScrollView, SafeAreaView, StyleSheet } from "react-native";
 import Restaurantes from "../../Assets/categorias/restaurantes.svg";
 import Boates from "../../Assets/categorias/boates.svg";
@@ -24,7 +24,7 @@ const Home = ({ navigation }) => {
       navigation.navigate("Restaurantes");
     }
   };
-  
+
   const Boat = () => {
     if (select == 0) {
       return alert("É necessário escolher alguma região!");
@@ -51,9 +51,6 @@ const Home = ({ navigation }) => {
       navigation.navigate("Praias");
     }
   };
-  
-
-  
 
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
@@ -87,9 +84,7 @@ const Home = ({ navigation }) => {
           </C.ContainerButtons>
 
           <C.ContainerButtons>
-            <C.ButtonsCategorias
-              onPress={Atrac}
-            >
+            <C.ButtonsCategorias onPress={Atrac}>
               <Atracoes width={50} height={50} paddingVertical={38} />
               <C.ButtonText>ATRAÇOES</C.ButtonText>
             </C.ButtonsCategorias>

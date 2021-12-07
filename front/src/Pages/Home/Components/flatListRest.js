@@ -4,13 +4,20 @@ import { Ionicons } from "@expo/vector-icons";
 import Stars from "react-native-stars";
 import { DadosUsers } from "../../../Context/Contex";
 
-const FlatListRest = ({ data }) => {
+
+const FlatListRest = ({ nav, data }) => {
   const { url } = DadosUsers();
+
+  
+  const teste = () => {
+    
+    nav.navigate("Detail", {id: data.id});
+  }
 
   return (
     <C.ScrollFlat>
       <C.ViewFlat>
-        <C.ButtonFlat activeOpacity={0.7}>
+        <C.ButtonFlat activeOpacity={0.7} onPress={teste}>
           <C.ImgFlat source={{ uri: url + data.img }} />
         </C.ButtonFlat>
       </C.ViewFlat>

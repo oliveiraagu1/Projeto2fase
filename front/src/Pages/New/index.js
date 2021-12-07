@@ -32,6 +32,7 @@ const NewInfos = () => {
         type: "error",
         message: "Erro: É necessário escolher uma categoria!",
       });
+
     };
     if(regiao == 0) {
       return setStatus({
@@ -152,6 +153,7 @@ const NewInfos = () => {
   };
 
   return (
+   
     <KeyboardAvoidingView>
       <ScrollView>
     <C.Container>

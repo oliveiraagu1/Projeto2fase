@@ -11,6 +11,8 @@ import Boates from "../Pages/Home/Components/Boates";
 import Atracoes from "../Pages/Home/Components/Atracoes";
 import Praias from "../Pages/Home/Components/Praias";
 
+import Detail from "../Pages/Detail";
+
 import PontosHistoricos from "../Pages/pontosHistoricos/HomePontos";
 import Palacio from "../Pages/pontosHistoricos/locais/Palacio";
 import Catedral from "../Pages/pontosHistoricos/locais/Catedral";
@@ -75,6 +77,13 @@ const StackRoutes = () => {
       <Stack.Screen
         name="Praias"
         component={Praias}
+        options={{
+          headerShown: false,
+        }}
+      />
+       <Stack.Screen
+        name="Detail"
+        component={Detail}
         options={{
           headerShown: false,
         }}
