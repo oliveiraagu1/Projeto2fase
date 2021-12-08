@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import * as G from "../../styles/styles_adm";
-import * as C from "./style";
+import Header from "../../Components/Header";
 import api from "../../Services/Api/api";
+import * as C from "./style";
 import * as Yup from "yup";
-import { StatusBar } from "react-native";
 
-const Cadastro = ({ navigation }) => {
+const Cadastro = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -55,25 +54,26 @@ const Cadastro = ({ navigation }) => {
       return setStatus({
         type: "error",
         message: "Erro: Usuário já cadastrado!",
-      });;
+      });
     }
   };
 
   return (
     <C.Container>
+      <Header />
       <C.Scroll>
         <C.Title>CADASTRE-SE</C.Title>
-        <G.Texto>Email</G.Texto>
-        <G.Input
+        <C.Texto>Email</C.Texto>
+        <C.Input
           onChangeText={(text) => setEmail(text)}
           autoCapitalize="none"
           autoCorrect={false}
           keyboardType="email-address"
         />
-        <G.Texto>Nome de usuário</G.Texto>
-        <G.Input onChangeText={(text) => setName(text)} />
-        <G.Texto>Senha</G.Texto>
-        <G.Input
+        <C.Texto>Nome de usuário</C.Texto>
+        <C.Input onChangeText={(text) => setName(text)} />
+        <C.Texto>Senha</C.Texto>
+        <C.Input
           onChangeText={(text) => setPassword(text)}
           secureTextEntry={true}
           autoCapitalize="none"
@@ -89,9 +89,9 @@ const Cadastro = ({ navigation }) => {
           </C.StatusTextDanger>
         </C.Status>
 
-        <G.Button onPress={Cadastrar}>
-          <G.TextButton>ENVIAR</G.TextButton>
-        </G.Button>
+        <C.Button onPress={Cadastrar}>
+          <C.TextButton>ENVIAR</C.TextButton>
+        </C.Button>
       </C.Scroll>
     </C.Container>
   );

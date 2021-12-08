@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { KeyboardAvoidingView, ScrollView, Platform } from "react-native";
+import Header from "../../Components/Header";
 import api from "../../Services/Api/api";
-import * as G from "../../styles/styles_adm";
 import * as C from "./style";
 import * as Yup from "yup";
 
@@ -16,7 +17,6 @@ const Login = ({ navigation }) => {
 
   const { setDadosUser } = DadosUsers();
 
-  
   const ValidaLogin = async () => {
     const schema = Yup.object().shape({
       email: Yup.string()
@@ -49,7 +49,7 @@ const Login = ({ navigation }) => {
         id: result.data.login.id,
       });
       alert(result.data.mensagem);
-      
+
       return navigation.navigate("Home");
     } catch (err) {
       return setStatus({
@@ -59,42 +59,43 @@ const Login = ({ navigation }) => {
     }
   };
 
-  
-
   return (
     <C.Container>
-      <C.ImageTop source={require("../../Assets/Login/imageTop.png")} />
-      <C.Login>
-        <C.Title>ENTRAR</C.Title>
-        <G.TextoEmail>Email</G.TextoEmail>
-        <C.ContainerInput>
-        <G.Input
-          onChangeText={(text) => setEmail(text)}
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="email-address"
-        />
-        <G.Texto>Senha</G.Texto>
-        <G.Input
-          secureTextEntry={true}
-          autoCapitalize="none"
-          autoCorrect={false}
-          onChangeText={(text) => setPassword(text)}
-        />
-        </C.ContainerInput>
-        <C.Status>
-          <C.StatusTextDanger>
-            {status.type === "error" ? status.message : ""}
-          </C.StatusTextDanger>
-        </C.Status>
-
-        <G.Button onPress={Logar}>
-          <G.TextButton>ENTRAR</G.TextButton>
-        </G.Button>
-
-        <C.ImageBot source={require("../../Assets/Login/imageBot.png")} />
-      </C.Login>
-
+      <KeyboardAvoidingView
+        behavior={Platform.OS == "ios" ? "padding" : "height"}
+        keyboardVerticalOffset={80}
+      >
+        <ScrollView>
+          <Header />
+          <C.Login>
+            <C.Title>ENTRAR</C.Title>
+            <C.Texto>E-mail</C.Texto>
+            <C.ContainerInput>
+              <C.Input
+                onChangeText={(text) => setEmail(text)}
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+              />
+              <C.Texto>Senha</C.Texto>
+              <C.Input
+                secureTextEntry={true}
+                autoCapitalize="none"
+                autoCorrect={false}
+                onChangeText={(text) => setPassword(text)}
+              />
+            </C.ContainerInput>
+            <C.Status>
+              <C.StatusTextDanger>
+                {status.type === "error" ? status.message : ""}
+              </C.StatusTextDanger>
+            </C.Status>
+            <C.Button onPress={Logar}>
+              <C.TextButton>ENTRAR</C.TextButton>
+            </C.Button>
+          </C.Login>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </C.Container>
   );
 };
