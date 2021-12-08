@@ -120,13 +120,13 @@ export const TitleDescription = styled.Text`
 export const TitleInfo = styled.Text `
     font-size: 25px;
     font-weight: 700;
-    margin-top: 150px;
-    margin: 0 auto;
+    margin-top: 20px;
+    
     text-align: center;
 `
 export const TextInfo = styled.Text `
     text-align: justify;
     color: #000;
     font-size: 14px;
-    margin: 20px 20px 0 20px;
+    margin: 10px 20px 0 20px;
 `
